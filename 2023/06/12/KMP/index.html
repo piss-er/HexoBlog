@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.gejiba.com/images/40bc3cb7697a13d587b80e33feb3dcc9.png">
 <meta property="article:published_time" content="2023-06-12T13:27:55.901Z">
-<meta property="article:modified_time" content="2023-06-12T13:27:03.855Z">
+<meta property="article:modified_time" content="2023-06-12T13:29:36.340Z">
 <meta property="article:author" content="李小基">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img.gejiba.com/images/40bc3cb7697a13d587b80e33feb3dcc9.png">
@@ -312,16 +312,8 @@
 <td align="center">1</td>
 <td align="center">2</td>
 </tr>
-<tr>
-<td align="center">可以看出来，next数组存的是如果该位置匹配失败那么该跳到哪里，j&#x3D;4如果匹配失败了，那么此时前后缀长度为1，应该回溯到j&#x3D;1。这样的话，我们构建next数组的时候只需要把当前位置产生的前后缀信息放到下一个位置便可以了，也就是说，最后一个位置的前后缀信息是不用比较的</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
 </tbody></table>
+<p>可以看出来，next数组存的是如果该位置匹配失败那么该跳到哪里，j&#x3D;4如果匹配失败了，那么此时前后缀长度为1，应该回溯到j&#x3D;1。这样的话，我们构建next数组的时候只需要把当前位置产生的前后缀信息放到下一个位置便可以了，也就是说，最后一个位置的前后缀信息是不用比较的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">indexOf</span><span class="hljs-params">(String target, String pattern)</span>&#123;<br>    <span class="hljs-keyword">return</span> indexOf(target, pattern, <span class="hljs-number">0</span>);<span class="hljs-comment">//下一个写的是从固定位置开始比较，不写位置的话默认从0位置开始比较</span><br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">indexOf</span><span class="hljs-params">(String target, String pattern, <span class="hljs-type">int</span> begin)</span>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> target.length(), m = pattern.length();<br>    <span class="hljs-keyword">if</span>(begin&lt;<span class="hljs-number">0</span>)<br>        begin = <span class="hljs-number">0</span>;<span class="hljs-comment">//begin容错</span><br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span> || n&lt;m || begin&gt;=n)<span class="hljs-comment">//目标串长度为0，目标串小与模式串，开始比较的位置bigin就已经越界，均不符合要求</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    next = getNext(pattern);<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> begin,j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(i&lt;n &amp;&amp; j&lt;m)&#123;<br>        <span class="hljs-comment">//循环条件：i比到n，j比到m</span><br>        <span class="hljs-keyword">if</span>(j==-<span class="hljs-number">1</span> || target.charAt(i)==pattern.charAt(j))&#123;<br>            <span class="hljs-comment">//比对成功可以让指针加1</span><br>            <span class="hljs-comment">//也可能j是被回溯，然后再来比较，并且有可能直接被回溯为-1，如果回溯为-1，说明没有可以利用的子串信息，直接比下一对就行，所以也需要两指针+1</span><br>            <span class="hljs-comment">//回溯到-1和0是不一样的，0还需要比较一下i和j=0两位置的字符，失败的那个位置没有可以用的子串信息，只能和第0号字符比较了，但是如果回溯到了-1，说明，第0号元素也不用比较了，这一次的匹配失败已经证明了和第0个肯定不相同，直接回溯到-1，就能在下一次循环中让两个指针+1，不用浪费一次比较</span><br>            i++;<br>            j++;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            j = next[j];<span class="hljs-comment">//匹配字符失败，j回溯</span><br>            <span class="hljs-keyword">if</span>(n-i+<span class="hljs-number">1</span>&lt;m-j+<span class="hljs-number">1</span>)<span class="hljs-comment">//如果目标串长度还没子串长，那就不用比了</span><br>                <span class="hljs-keyword">break</span>;<br>            <br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> j==m?i-m:-<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>构建next</p>
 <blockquote>
