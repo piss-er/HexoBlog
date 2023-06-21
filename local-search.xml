@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title></title>
+    <title>MySQL忘密码了怎么办</title>
     <link href="/2023/06/21/MySQL%E5%BF%98%E5%AF%86%E7%A0%81%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/"/>
     <url>/2023/06/21/MySQL%E5%BF%98%E5%AF%86%E7%A0%81%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/</url>
     
-    <content type="html"><![CDATA[<hr><h2 id="MySQL忘密码了怎么办"><a href="#MySQL忘密码了怎么办" class="headerlink" title="MySQL忘密码了怎么办"></a>MySQL忘密码了怎么办</h2><p><a href="http://t.csdn.cn/mFZZj">教程原文</a></p><ol><li><p>管理员模式打开cmd，如果还开着mysql服务那先关掉<code>net stop mysql</code><br>用如下命令打开越权模式<br><code>mysqld --console --skip-grant-tables --shared-memory</code><br>这样可以越权模式打开mysql，保留这个黑窗口<br><img src="https://img.gejiba.com/images/3267fbb2193cabd2d0f97388665052c5.png" alt="3267fbb2193cabd2d0f97388665052c5.png"></p></li><li><p>用管理员身份打开一个cmd<br><code>mysql -u root -p</code><br>让输入密码时无需输入直接回车就可以进入root用户<br>（上一步没有关闭mysql服务这一步就会失败）</p></li><li><p>刷新权限，不然不允许改密码<br><code>flush privileges;</code></p></li><li><p>改密码为123<br><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;123&#39;;</code></p></li><li><p>再刷新一下权限就可以了<br><code>flush privileges;</code></p></li></ol><p><img src="https://img.gejiba.com/images/d30c87e2c9bb2d6ca0eb22fb855ad4df.png" alt="d30c87e2c9bb2d6ca0eb22fb855ad4df.png"></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://t.csdn.cn/mFZZj">教程原文</a></p><ol><li><p>管理员模式打开cmd，如果还开着mysql服务那先关掉<code>net stop mysql</code><br>用如下命令打开越权模式<br><code>mysqld --console --skip-grant-tables --shared-memory</code><br>这样可以越权模式打开mysql，保留这个黑窗口<br><img src="https://img.gejiba.com/images/3267fbb2193cabd2d0f97388665052c5.png"></p></li><li><p>用管理员身份打开一个cmd<br><code>mysql -u root -p</code><br>让输入密码时无需输入直接回车就可以进入root用户<br>（上一步没有关闭mysql服务这一步就会失败）</p></li><li><p>刷新权限，不然不允许改密码<br><code>flush privileges;</code></p></li><li><p>改密码为123<br><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;123&#39;;</code></p></li><li><p>再刷新一下权限就可以了<br><code>flush privileges;</code></p></li></ol><p><img src="https://img.gejiba.com/images/d30c87e2c9bb2d6ca0eb22fb855ad4df.png"></p>]]></content>
     
     
     
