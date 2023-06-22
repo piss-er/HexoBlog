@@ -1,5 +1,0 @@
----
-title: about
-layout: about
-date: 2023-06-12 20:59:29
----

@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李小基">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文通过先展示效果再展示代码帮助大家快速学会Markdown   六级标题  一级  二级  三级  四级  五级  六级  123456# 一级## 二级### 三级#### 四级##### 五级###### 六级  区块  这是一个区块  区块也可嵌套   12&gt; 这是一个区块&gt;&gt; 区块也可嵌套   列表 有序列表：（数字点后面添加一个空格）  打开冰箱门 把大象塞进去 关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一篇文章学会Markdown">
+<meta property="og:url" content="http://example.com/2023/06/22/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9AMarkdown/index.html">
+<meta property="og:site_name" content="李小基的个人站">
+<meta property="og:description" content="本文通过先展示效果再展示代码帮助大家快速学会Markdown   六级标题  一级  二级  三级  四级  五级  六级  123456# 一级## 二级### 三级#### 四级##### 五级###### 六级  区块  这是一个区块  区块也可嵌套   12&gt; 这是一个区块&gt;&gt; 区块也可嵌套   列表 有序列表：（数字点后面添加一个空格）  打开冰箱门 把大象塞进去 关">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.gejiba.com/images/18fe10b3ff7a148d67b7b78a2451bc5d.jpg">
+<meta property="article:published_time" content="2023-06-22T06:39:33.826Z">
+<meta property="article:modified_time" content="2023-06-22T06:52:02.670Z">
+<meta property="article:author" content="李小基">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.gejiba.com/images/18fe10b3ff7a148d67b7b78a2451bc5d.jpg">
+  
+  
+  
+  <title>一篇文章学会Markdown - 李小基的个人站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="一篇文章学会Markdown"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-22 14:39" pubdate>
+          2023年6月22日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">一篇文章学会Markdown</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="本文通过先展示效果再展示代码帮助大家快速学会markdown"><a class="markdownIt-Anchor" href="#本文通过先展示效果再展示代码帮助大家快速学会markdown"></a> 本文通过先展示效果再展示代码帮助大家快速学会Markdown</h3>
+<hr />
+<h3 id="六级标题"><a class="markdownIt-Anchor" href="#六级标题"></a> 六级标题</h3>
+<h1 id="一级"><a class="markdownIt-Anchor" href="#一级"></a> 一级</h1>
+<h2 id="二级"><a class="markdownIt-Anchor" href="#二级"></a> 二级</h2>
+<h3 id="三级"><a class="markdownIt-Anchor" href="#三级"></a> 三级</h3>
+<h4 id="四级"><a class="markdownIt-Anchor" href="#四级"></a> 四级</h4>
+<h5 id="五级"><a class="markdownIt-Anchor" href="#五级"></a> 五级</h5>
+<h6 id="六级"><a class="markdownIt-Anchor" href="#六级"></a> 六级</h6>
+<h2 id="-code0-"><a class="markdownIt-Anchor" href="#-code0-"></a> <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs clean"># 一级<br>## 二级<br>### 三级<br>#### 四级<br>##### 五级<br>###### 六级<br></code></pre></td></tr></table></figure></h2>
+<h3 id="区块"><a class="markdownIt-Anchor" href="#区块"></a> 区块</h3>
+<blockquote>
+<p>这是一个区块</p>
+<blockquote>
+<p>区块也可嵌套</p>
+</blockquote>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ruby">&gt; 这是一个区块<br><span class="hljs-meta prompt_">&gt;&gt;</span> 区块也可嵌套<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h3>
+<p>有序列表：（数字点后面添加一个空格）</p>
+<ol>
+<li>打开冰箱门</li>
+<li>把大象塞进去</li>
+<li>关上冰箱门</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 打开冰箱门<br><span class="hljs-bullet">2.</span> 把大象塞进去<br><span class="hljs-bullet">3.</span> 关上冰箱门<br></code></pre></td></tr></table></figure>
+<p>无序列表：（* - +号都行，这些标记后面要添加一个空格）</p>
+<ul>
+<li>数学课</li>
+<li>英语课</li>
+</ul>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>数学课<br><span class="hljs-bullet">- </span>英语课<br></code></pre></td></tr></table></figure>
+<p>嵌套列表：</p>
+<ol>
+<li>第一个需求
+<ul>
+<li>子需求</li>
+<li>子需求</li>
+</ul>
+</li>
+<li>第二个需求
+<ol>
+<li>第一步</li>
+<li>第二步</li>
+<li>第三步</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 第一个需求<br><span class="hljs-bullet">    -</span> 子需求<br><span class="hljs-bullet">    -</span> 子需求<br><span class="hljs-bullet">2.</span> 第二个需求<br><span class="hljs-bullet">    1.</span> 第一步<br><span class="hljs-bullet">    2.</span> 第二步<br><span class="hljs-bullet">    3.</span> 第三步<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="段落与字体"><a class="markdownIt-Anchor" href="#段落与字体"></a> 段落与字体</h3>
+<p>直接换行后为同一段内换行，两个空格后换行或者在直接编辑器中空一行表示下一段：</p>
+<p>第一段第一行<br />
+第一段第二行</p>
+<p>第二段</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">第一段第一行<br>第一段第二行<br><br>第二段<br></code></pre></td></tr></table></figure>
+<p><em>斜体文字</em></p>
+<p><strong>粗体文字</strong></p>
+<p><em><strong>粗斜体文字</strong></em></p>
+<p><s>删除线文字</s></p>
+<p><u>下划线文字</u></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-emphasis">*斜体文字*</span>  <br><br><span class="hljs-strong">**粗体文字**</span>  <br><br><span class="hljs-strong">**<span class="hljs-emphasis">*粗斜体文字*</span>**</span>  <br><br>~~删除线文字~~  <br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span></span>下划线文字<span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span></span>  <br></code></pre></td></tr></table></figure>
+<p>脚注：（点击脚注会自动跳转到文章末尾释意）<br />
+今天我们学习鲁迅文章:《论他妈的》</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">今天我们学习鲁迅<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="鲁迅，原名周树人，著名民主战士。">[1]</span></a></sup>文章:《论他妈的》<br>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">鲁迅，原名周树人，著名民主战士。 </span><br></code></pre></td></tr></table></figure>
+<p>分割线：<br />
+三个以上的*号，或者-号，可参考本文其他地方的分割线不再单独展示。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-string">***</span><br></code></pre></td></tr></table></figure>
+<p>下标：<br />
+Fe<sub>3</sub>O<sub>4</sub></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Fe</span>~<span class="hljs-number">3</span>~O~<span class="hljs-number">4</span>~<br></code></pre></td></tr></table></figure>
+<p>上标：<br />
+x<sup>2</sup></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">x</span>^<span class="hljs-number">2</span>^<br></code></pre></td></tr></table></figure>
+<p>高亮文字：<br />
+(公众号无法高亮，具体可自行复制查看，或查看评论区网页版原文)</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-operator">=</span><span class="hljs-operator">=</span>这是一段高亮文字<span class="hljs-operator">=</span><span class="hljs-operator">=</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+<p>两对 “```” 包括（反引号在键盘左上角，横版数字键的左端），可以指定语言，也可以不指定，指定后的语言会根据不同语言的关键词做颜色区分</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>```C++<br />
+int main(){<br />
+print(“Hello World!”);<br />
+return 0;<br />
+}<br />
+````<br />
+(此处代码区为显示效果，效果的实现代码如上)</p>
+<p>直接使用制表符tab键，或四个空格，也可以形成代码区</p>
+<p>如果是段落内代码，不单独占用整行区域，可以使用一对反引号括起来，就像这样<code>print()</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">`<span class="hljs-built_in">print</span>()`<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> 链接</h3>
+<p>方括号写站点名，圆括号写链接<br />
+<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-attr">[百度]</span>(<span class="hljs-attribute">https</span>:<span class="hljs-comment">//www.baidu.com/)</span><br></code></pre></td></tr></table></figure>
+<p>尖括号可以展示一个可点击的链接<br />
+<a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com/</a></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">&lt;https:<span class="hljs-regexp">//</span>www.baidu.com/&gt;<br></code></pre></td></tr></table></figure>
+<p>如果链接需要多次出现，可以将链接赋值一个变量，随用随取：<br />
+<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-attr">[百度]</span><span class="hljs-selector-attr">[1]</span><br><br><span class="hljs-selector-attr">[1]</span>: <span class="hljs-selector-tag">https</span>:<span class="hljs-comment">//www.baidu.com/</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="表格"><a class="markdownIt-Anchor" href="#表格"></a> 表格</h3>
+<p>使用竖线 | 区分不同列；<br />
+冒号的不同位置区分对齐方式（表格中添加123以防止看不出对齐方式）；<br />
+短横线至少一个；<br />
+左右端竖线可以省略。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐123</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐123</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elixir">|第一列|第二列|第三列|<br>|<span class="hljs-symbol">:---|</span><span class="hljs-symbol">:---</span><span class="hljs-symbol">:|---</span><span class="hljs-symbol">:|</span><br>|左对齐<span class="hljs-number">123</span>|居中|右对齐<span class="hljs-number">123</span>|<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="图片"><a class="markdownIt-Anchor" href="#图片"></a> 图片</h3>
+<p>先写叹号“！”；<br />
+方括号写图像名字；<br />
+圆括号写地址，可以是相对地址，也可以是绝对地址；<br />
+双引号内的文字可以在鼠标悬浮图片上时显示。<br />
+<img src="https://img.gejiba.com/images/18fe10b3ff7a148d67b7b78a2451bc5d.jpg" srcset="/img/loading.gif" lazyload alt="头像" /></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">!<span class="hljs-selector-attr">[头像]</span>(logo<span class="hljs-selector-class">.jpg</span> <span class="hljs-string">&quot;头像logo&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用HTML中普通的 img 标签<br />
+<img src = "https://img.gejiba.com/images/18fe10b3ff7a148d67b7b78a2451bc5d.jpg" width = "200px"></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;img src <span class="hljs-operator">=</span> <span class="hljs-string">&quot;logo.jpg&quot;</span> width <span class="hljs-operator">=</span> <span class="hljs-string">&quot;200px&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="数学公式"><a class="markdownIt-Anchor" href="#数学公式"></a> 数学公式</h3>
+<p>行内数学公式：$ \sum_{n=1}^{100} n^ 2$</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">$ \sum_</span><span class="hljs-template-variable">&#123;n=1&#125;</span><span class="language-xml">^</span><span class="hljs-template-variable">&#123;100&#125;</span><span class="language-xml"> n^2 $</span><br></code></pre></td></tr></table></figure>
+<p>单独占据整行：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mn>100</mn></munderover><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{100} n^2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.068226em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8011130000000004em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><br>\sum_&#123;n=<span class="hljs-number">1</span>&#125;^&#123;<span class="hljs-number">100</span>&#125; n^<span class="hljs-number">2</span><br><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><br><span class="hljs-comment">//这样排版美观，也可以写在一行内</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h3 id="特殊需求"><a class="markdownIt-Anchor" href="#特殊需求"></a> 特殊需求</h3>
+<p>如果你还有其他特殊需求，可以自行搜索使用HTML标签实现，Markdown中支持一些HTML标签，例如上文提到的<code>&lt;u&gt;下划线文字&lt;/u&gt;</code>和<code>&lt;img src = &quot;logo.jpg&quot; width = &quot;200px&quot;&gt;</code>本质为HTML标签</p>
+<hr />
+<h3 id="其他事项"><a class="markdownIt-Anchor" href="#其他事项"></a> 其他事项</h3>
+<p>本文为了使小白快速上手语言较为通俗，如“段内显示”和“单独占据整行”，实际为HTML中的“行内元素”和“块级元素”，专业人士不喜勿喷。</p>
+<p>也许你已经注意到了，本文同样采用Markdown进行编写，Markdown在写笔记，发表博客，排版方面有巨大优势。</p>
+<p>公众号回复0720可获取此页面的Markdown格式文件。</p>
+<h3 id="注释"><a class="markdownIt-Anchor" href="#注释"></a> 注释:</h3>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>鲁迅，原名周树人，著名民主战士。
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" class="category-chain-item">技术笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Markdown/">#Markdown</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>一篇文章学会Markdown</div>
+      <div>http://example.com/2023/06/22/一篇文章学会Markdown/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李小基</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月22日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/22/%E6%8E%92%E5%BA%8F(%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93)/" title="排序算法(粗略总结,Java实现)">
+                        <span class="hidden-mobile">排序算法(粗略总结,Java实现)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
