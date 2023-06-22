@@ -1,5 +1,9 @@
 ---
 title: MySQL忘密码了怎么办
+categories:
+- 技术笔记
+tags:
+- MySQL
 ---
 [教程原文](http://t.csdn.cn/mFZZj)
 1. 管理员模式打开cmd，如果还开着mysql服务那先关掉`net stop mysql`

@@ -1,5 +1,11 @@
 ---
 title: KMP详解
+categories:
+- 技术笔记
+tags:
+- Java
+- 算法
+- 字符串匹配
 ---
 [![40bc3cb7697a13d587b80e33feb3dcc9.png](https://img.gejiba.com/images/40bc3cb7697a13d587b80e33feb3dcc9.png)](https://img.gejiba.com/image/EegrG8)
 
