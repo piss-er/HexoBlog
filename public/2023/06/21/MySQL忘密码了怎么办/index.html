@@ -16,12 +16,12 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="教程原文  管理员模式打开cmd，如果还开着mysql服务那先关掉net stop mysql用如下命令打开越权模式mysqld --console --skip-grant-tables --shared-memory这样可以越权模式打开mysql，保留这个黑窗口  用管理员身份打开一个cmdmysql -u root -p让输入密码时无需输入直接回车就可以进入root用户（上一步没有关闭mys">
+    <meta name="description" content="教程原文   管理员模式打开cmd，如果还开着mysql服务那先关掉net stop mysql 用如下命令打开越权模式 mysqld --console --skip-grant-tables --shared-memory 这样可以越权模式打开mysql，保留这个黑窗口    用管理员身份打开一个cmd mysql -u root -p 让输入密码时无需输入直接回车就可以进入root用户 （上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL忘密码了怎么办">
 <meta property="og:url" content="http://example.com/2023/06/21/MySQL%E5%BF%98%E5%AF%86%E7%A0%81%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="教程原文  管理员模式打开cmd，如果还开着mysql服务那先关掉net stop mysql用如下命令打开越权模式mysqld --console --skip-grant-tables --shared-memory这样可以越权模式打开mysql，保留这个黑窗口  用管理员身份打开一个cmdmysql -u root -p让输入密码时无需输入直接回车就可以进入root用户（上一步没有关闭mys">
+<meta property="og:description" content="教程原文   管理员模式打开cmd，如果还开着mysql服务那先关掉net stop mysql 用如下命令打开越权模式 mysqld --console --skip-grant-tables --shared-memory 这样可以越权模式打开mysql，保留这个黑窗口    用管理员身份打开一个cmd mysql -u root -p 让输入密码时无需输入直接回车就可以进入root用户 （上">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.gejiba.com/images/3267fbb2193cabd2d0f97388665052c5.png">
 <meta property="og:image" content="https://img.gejiba.com/images/d30c87e2c9bb2d6ca0eb22fb855ad4df.png">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          332 字
+          308 字
         
       </span>
     
@@ -279,18 +279,33 @@
                 
                 <p><a target="_blank" rel="noopener" href="http://t.csdn.cn/mFZZj">教程原文</a></p>
 <ol>
-<li><p>管理员模式打开cmd，如果还开着mysql服务那先关掉<code>net stop mysql</code><br>用如下命令打开越权模式<br><code>mysqld --console --skip-grant-tables --shared-memory</code><br>这样可以越权模式打开mysql，保留这个黑窗口<br><img src="https://img.gejiba.com/images/3267fbb2193cabd2d0f97388665052c5.png" srcset="/img/loading.gif" lazyload></p>
+<li>
+<p>管理员模式打开cmd，如果还开着mysql服务那先关掉<code>net stop mysql</code><br />
+用如下命令打开越权模式<br />
+<code>mysqld --console --skip-grant-tables --shared-memory</code><br />
+这样可以越权模式打开mysql，保留这个黑窗口<br />
+<img src="https://img.gejiba.com/images/3267fbb2193cabd2d0f97388665052c5.png" srcset="/img/loading.gif" lazyload alt="" /></p>
 </li>
-<li><p>用管理员身份打开一个cmd<br><code>mysql -u root -p</code><br>让输入密码时无需输入直接回车就可以进入root用户<br>（上一步没有关闭mysql服务这一步就会失败）</p>
+<li>
+<p>用管理员身份打开一个cmd<br />
+<code>mysql -u root -p</code><br />
+让输入密码时无需输入直接回车就可以进入root用户<br />
+（上一步没有关闭mysql服务这一步就会失败）</p>
 </li>
-<li><p>刷新权限，不然不允许改密码<br><code>flush privileges;</code></p>
+<li>
+<p>刷新权限，不然不允许改密码<br />
+<code>flush privileges;</code></p>
 </li>
-<li><p>改密码为123<br><code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;123&#39;;</code></p>
+<li>
+<p>改密码为123<br />
+<code>alter user 'root'@'localhost' identified by '123';</code></p>
 </li>
-<li><p>再刷新一下权限就可以了<br><code>flush privileges;</code></p>
+<li>
+<p>再刷新一下权限就可以了<br />
+<code>flush privileges;</code><br />
+<img src="https://img.gejiba.com/images/d30c87e2c9bb2d6ca0eb22fb855ad4df.png" srcset="/img/loading.gif" lazyload alt="" /></p>
 </li>
 </ol>
-<p><img src="https://img.gejiba.com/images/d30c87e2c9bb2d6ca0eb22fb855ad4df.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -449,6 +464,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -642,6 +663,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

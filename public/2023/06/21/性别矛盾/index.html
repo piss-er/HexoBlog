@@ -281,7 +281,11 @@
             
               <div class="markdown-body">
                 
-                <p><img src="https://img.gejiba.com/images/65f8a7ddb18567c926af3c93c3da34a1.png" srcset="/img/loading.gif" lazyload><br><img src="https://img.gejiba.com/images/4cd09c067cce6180701ad5d86484e669.png" srcset="/img/loading.gif" lazyload><br><img src="https://img.gejiba.com/images/3f745f8f53696758da445d732e299888.png" srcset="/img/loading.gif" lazyload><br>综合思维导图如下, 可以尝试右键保存图片本地观看<br><img src="https://img.gejiba.com/images/3c37c7b9a285747a1ad33bb8759f6159.png" srcset="/img/loading.gif" lazyload alt="综合思维导图"></p>
+                <p><img src="https://img.gejiba.com/images/65f8a7ddb18567c926af3c93c3da34a1.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+<img src="https://img.gejiba.com/images/4cd09c067cce6180701ad5d86484e669.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+<img src="https://img.gejiba.com/images/3f745f8f53696758da445d732e299888.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+综合思维导图如下, 可以尝试右键保存图片本地观看<br />
+<img src="https://img.gejiba.com/images/3c37c7b9a285747a1ad33bb8759f6159.png" srcset="/img/loading.gif" lazyload alt="综合思维导图" /></p>
 
                 
               </div>
@@ -444,6 +448,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -637,6 +647,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

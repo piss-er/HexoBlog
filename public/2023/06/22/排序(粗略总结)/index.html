@@ -16,21 +16,21 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="稳定性：如果相同元素的前后相对位置不变，就说这种排序算法是稳定的 插入排序 直接插入排序算法 序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定  123456for(int i&#x3D;1; i&lt;keys.length; i++)&amp;#123;    int x &#x3D; key[i],">
+    <meta name="description" content="稳定性：如果相同元素的前后相对位置不变，就说这种排序算法是稳定的  插入排序  直接插入排序算法   序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟 每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定  123456for(int i&#x3D;1; i&lt;keys.length; i++)&amp;#123;    int x &#x3D; ke">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法(粗略总结,Java实现)">
 <meta property="og:url" content="http://example.com/2023/06/22/%E6%8E%92%E5%BA%8F(%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93)/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="稳定性：如果相同元素的前后相对位置不变，就说这种排序算法是稳定的 插入排序 直接插入排序算法 序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定  123456for(int i&#x3D;1; i&lt;keys.length; i++)&amp;#123;    int x &#x3D; key[i],">
+<meta property="og:description" content="稳定性：如果相同元素的前后相对位置不变，就说这种排序算法是稳定的  插入排序  直接插入排序算法   序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟 每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定  123456for(int i&#x3D;1; i&lt;keys.length; i++)&amp;#123;    int x &#x3D; ke">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022-11-20-22-19-50.png">
+<meta property="og:image" content="http://example.com/2023/06/22/%E6%8E%92%E5%BA%8F(%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93)/2022-11-20-22-19-50.png">
 <meta property="article:published_time" content="2023-06-22T06:16:52.327Z">
 <meta property="article:modified_time" content="2023-06-22T06:26:11.398Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022-11-20-22-19-50.png">
+<meta name="twitter:image" content="http://example.com/2023/06/22/%E6%8E%92%E5%BA%8F(%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93)/2022-11-20-22-19-50.png">
   
   
   
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.8k 字
         
       </span>
     
@@ -278,151 +278,185 @@
               <div class="markdown-body">
                 
                 <p><strong>稳定性</strong>：如果相同元素的前后相对位置不变，就说这种排序算法是稳定的</p>
-<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><ol>
-<li><strong>直接插入排序算法</strong><blockquote>
-<p>序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟<br>每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定</p>
+<h4 id="插入排序"><a class="markdownIt-Anchor" href="#插入排序"></a> 插入排序</h4>
+<ol>
+<li><strong>直接插入排序算法</strong></li>
+</ol>
+<blockquote>
+<p>序列分为两部分，一部分有序，一部分无序，每一趟都从无序的中挑一个插入到有序的序列中，共执行n-1趟<br />
+每趟拿到的数一点一点交换往前移动，这样的话遇到相同的数就不移动，算法稳定</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;keys.length; i++)&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> key[i], j;<br>    <span class="hljs-keyword">for</span>(j=i-<span class="hljs-number">1</span>; j&gt;<span class="hljs-number">0</span> &amp;&amp; x&lt;key[j]; j--)<br>        key[j+<span class="hljs-number">1</span>] = keys[j];<span class="hljs-comment">//j元素后移</span><br>    keys[j+<span class="hljs-number">1</span>] = x;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>正序序列，时间复杂度O(n)；反序序列，时间复杂度O(n^2^)<br>随机排序，等概率情况下为O(n^2^)</p>
+<p>正序序列，时间复杂度O(n)；反序序列，时间复杂度O(n<sup>2</sup>)<br />
+随机排序，等概率情况下为O(n<sup>2</sup>)</p>
 </blockquote>
-</li>
-</ol>
 <ul>
-<li><p><strong>改进</strong> 增加哨兵位而不是用通过j&gt;0来比较，比较操作在汇编层面更耗时间</p>
+<li>
+<p><strong>改进</strong> 增加哨兵位而不是用通过j&gt;0来比较，比较操作在汇编层面更耗时间</p>
 </li>
-<li><p><strong>改进</strong> 可以通过二分查找查看有序的那一部分中应该插入到哪儿</p>
+<li>
+<p><strong>改进</strong> 可以通过二分查找查看有序的那一部分中应该插入到哪儿</p>
 </li>
-<li><p><strong>稳定性</strong> 稳定</p>
+<li>
+<p><strong>稳定性</strong> 稳定</p>
 </li>
-<li><p><strong>时间复杂度</strong> 最好正序O(n)，最坏倒序O(n^2^)</p>
+<li>
+<p><strong>时间复杂度</strong> 最好正序O(n)，最坏倒序O(n<sup>2</sup>)</p>
 </li>
-<li><p><strong>空间复杂度</strong>O(1)</p>
+<li>
+<p><strong>空间复杂度</strong>O(1)</p>
 </li>
 </ul>
-<h4 id="希尔排序-缩小增量排序"><a href="#希尔排序-缩小增量排序" class="headerlink" title="希尔排序(缩小增量排序)"></a>希尔排序(缩小增量排序)</h4><blockquote>
-<p><strong>分组</strong>，增量delta&#x3D;4，那就每隔4个位一组</p>
+<h4 id="希尔排序缩小增量排序"><a class="markdownIt-Anchor" href="#希尔排序缩小增量排序"></a> 希尔排序(缩小增量排序)</h4>
+<blockquote>
+<p><strong>分组</strong>，增量delta=4，那就每隔4个位一组</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th align="center">38</th>
-<th align="center">55</th>
-<th align="center">65</th>
-<th align="center">97</th>
-<th align="center">27</th>
-<th align="center">76</th>
-<th align="center">27*</th>
-<th align="center">13</th>
-<th align="center">19</th>
+<th style="text-align:center">38</th>
+<th style="text-align:center">55</th>
+<th style="text-align:center">65</th>
+<th style="text-align:center">97</th>
+<th style="text-align:center">27</th>
+<th style="text-align:center">76</th>
+<th style="text-align:center">27*</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">19</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">6</td>
-<td align="center">7</td>
-<td align="center">8</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
 </tr>
 <tr>
-<td align="center">i</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">i+4</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">i+4+4</td>
+<td style="text-align:center">i</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">i+4</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">i+4+4</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>0号和4号和8号比，不符合顺序就交换，1号和5号比较<br>每一组都分别整理好组内的顺序</p>
+<p>0号和4号和8号比，不符合顺序就交换，1号和5号比较<br />
+每一组都分别整理好组内的顺序</p>
 </blockquote>
 <blockquote>
-<p>下一次delta&#x3D;2，整理好<br>下一次delta&#x3D;1，整理好<br>排序完成</p>
+<p>下一次delta=2，整理好<br />
+下一次delta=1，整理好<br />
+排序完成</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> delta=key.length/<span class="hljs-number">2</span>; delta&gt;<span class="hljs-number">0</span>; delta/=<span class="hljs-number">2</span>)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=delta; i&lt;key.length; i++)&#123;<span class="hljs-comment">//这里结束叫“一趟”，一趟过后的特点是，分组有序</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> key[i];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=i-delta; j&gt;=<span class="hljs-number">0</span> &amp;&amp; x&lt;key[j]; j-=delta)<br>            key[j+delta] = key[j];<span class="hljs-comment">//后移</span><br>        key[j+delta] = x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
 <blockquote>
-<p>凭啥这种方式能排序更快？<br>这种排序每个元素需要归位的话，他每一次能移动的更多，腿更长，变量能够“大跨步地向这更加正确的方向运动”</p>
+<p>凭啥这种方式能排序更快？<br />
+这种排序每个元素需要归位的话，他每一次能移动的更多，腿更长，变量能够“大跨步地向这更加正确的方向运动”</p>
 </blockquote>
 <ul>
 <li><strong>稳定性</strong> 算法不稳定， 跨步交换的过程可能会交换两个相同元素的相对位置</li>
 <li><strong>时间复杂度</strong> 比较复杂</li>
 <li><strong>空间复杂度</strong>O(1)</li>
 </ul>
-<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><blockquote>
+<h4 id="冒泡排序"><a class="markdownIt-Anchor" href="#冒泡排序"></a> 冒泡排序</h4>
+<blockquote>
 <p>从前到后，相邻两个比较，不符合顺序就交换，每一趟能归位一个</p>
 </blockquote>
 <blockquote>
-<p>和插入排序的区别<br>插入排序是依次<strong>移动</strong>变量，冒泡是依次<strong>交换</strong>变量<br>插入的前面是排好序的序列，插入的后面是排好序的序列</p>
+<p>和插入排序的区别<br />
+插入排序是依次<strong>移动</strong>变量，冒泡是依次<strong>交换</strong>变量<br />
+插入的前面是排好序的序列，插入的后面是排好序的序列</p>
 </blockquote>
 <ul>
-<li><p><strong>改进</strong> 如果有一趟没有交换，那么就停止算法，序列已经满足顺序，使用一个布尔型变量标记这一趟有没有交换</p>
+<li>
+<p><strong>改进</strong> 如果有一趟没有交换，那么就停止算法，序列已经满足顺序，使用一个布尔型变量标记这一趟有没有交换</p>
 </li>
-<li><p><strong>稳定性</strong> 如果相等不交换，那么相对位置不变</p>
+<li>
+<p><strong>稳定性</strong> 如果相等不交换，那么相对位置不变</p>
 </li>
-<li><p><strong>时间复杂度</strong> 最好O(n)，最坏O(n^2^)</p>
+<li>
+<p><strong>时间复杂度</strong> 最好O(n)，最坏O(n<sup>2</sup>)</p>
 </li>
-<li><p><strong>空间复杂度</strong>O(1)</p>
+<li>
+<p><strong>空间复杂度</strong>O(1)</p>
 </li>
 </ul>
-<h4 id="快速排序（重点）"><a href="#快速排序（重点）" class="headerlink" title="快速排序（重点）"></a>快速排序（重点）</h4><blockquote>
-<p>设置基准值，大于基准值的和小于基准值的各分一组，这两组分别找基准值，分组……<br>当一组只有一个就是排序成功</p>
+<h4 id="快速排序重点"><a class="markdownIt-Anchor" href="#快速排序重点"></a> 快速排序（重点）</h4>
+<blockquote>
+<p>设置基准值，大于基准值的和小于基准值的各分一组，这两组分别找基准值，分组……<br />
+当一组只有一个就是排序成功</p>
 </blockquote>
 <blockquote>
-<p>怎么分组？<br>通过两个指针前后相对运动来分两组，前后顺序不对就交换</p>
+<p>怎么分组？<br />
+通过两个指针前后相对运动来分两组，前后顺序不对就交换</p>
 </blockquote>
 <blockquote>
-<p>切记前后两个指针，一趟过后判断序列的时候，两个指针分别走i先j后，所得序列和原序列完全无关<br><img src="/2022-11-20-22-19-50.png" srcset="/img/loading.gif" lazyload></p>
+<p>切记前后两个指针，一趟过后判断序列的时候，两个指针分别走i先j后，所得序列和原序列完全无关<br />
+<img src="2022-11-20-22-19-50.png" srcset="/img/loading.gif" lazyload alt="" /></p>
 </blockquote>
 <ul>
 <li><strong>稳定性</strong> 不稳定，有跨越，可能导致跳过相同的值</li>
-<li><strong>时间复杂度</strong> 最好每一次都分成长度相近的两个子序列O(nlog<del>2</del>n)，最坏每一趟都分成差异很大的两个子序列O(n^2^)相当于普通排序</li>
+<li><strong>时间复杂度</strong> 最好每一次都分成长度相近的两个子序列O(nlog<sub>2</sub>n)，最坏每一趟都分成差异很大的两个子序列O(n<sup>2</sup>)相当于普通排序</li>
 <li><strong>空间复杂度</strong> O(1)</li>
 </ul>
-<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><blockquote>
-<p>每一趟<strong>选择</strong>未被排序的序列中最大的元素放到最后，每趟归位一个<br>n-1趟</p>
+<h4 id="选择排序"><a class="markdownIt-Anchor" href="#选择排序"></a> 选择排序</h4>
+<blockquote>
+<p>每一趟<strong>选择</strong>未被排序的序列中最大的元素放到最后，每趟归位一个<br />
+n-1趟</p>
 </blockquote>
 <ul>
 <li><strong>稳定性</strong> 不稳定，会跳跃</li>
-<li><strong>时间复杂度</strong> O(n^2^)</li>
+<li><strong>时间复杂度</strong> O(n<sup>2</sup>)</li>
 <li><strong>空间复杂度</strong>O(1)</li>
 </ul>
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><blockquote>
+<h4 id="堆排序"><a class="markdownIt-Anchor" href="#堆排序"></a> 堆排序</h4>
+<blockquote>
 <p>第一次构建堆麻烦一些，但是构建好之后，取出堆首元素，堆尾元素放到堆首，然后往下滑(不止滑一步)，初次构建时候建议也搞成滑动操作，而不是简单的交换操作，每一个结点都往下滑动</p>
 </blockquote>
 <blockquote>
-<p>完全二叉树，用数组模拟，索引从0开始的话，每一个结点index*2+1就是左孩子结点，array.length&#x2F;2-1就是第一个非叶子结点</p>
+<p>完全二叉树，用数组模拟，索引从0开始的话，每一个结点index*2+1就是左孩子结点，array.length/2-1就是第一个非叶子结点</p>
 </blockquote>
 <ul>
 <li><strong>稳定性</strong> 不稳定，会跳跃</li>
-<li><strong>时间复杂度</strong> O(nlog<del>2</del>n)</li>
+<li><strong>时间复杂度</strong> O(nlog<sub>2</sub>n)</li>
 <li><strong>空间复杂度</strong>O(1)</li>
 </ul>
-<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><blockquote>
-<p>基础操作是合并两个已经排序的序列(双指针)<br>两两一组，排序，每两个组合并……，最后只剩下一个组</p>
+<h4 id="归并排序"><a class="markdownIt-Anchor" href="#归并排序"></a> 归并排序</h4>
+<blockquote>
+<p>基础操作是合并两个已经排序的序列(双指针)<br />
+两两一组，排序，每两个组合并…，最后只剩下一个组</p>
 </blockquote>
 <ul>
-<li><strong>时间复杂度</strong>一共排序合并log<del>2</del>n次，每一次操作次数都是n，时间复杂度为O(nlog<del>2</del>n)</li>
+<li><strong>时间复杂度</strong>一共排序合并log<sub>2</sub>n次，每一次操作次数都是n，时间复杂度为O(nlog<sub>2</sub>n)</li>
 </ul>
-<h4 id="做题总结"><a href="#做题总结" class="headerlink" title="做题总结"></a>做题总结</h4><ul>
+<h4 id="做题总结"><a class="markdownIt-Anchor" href="#做题总结"></a> 做题总结</h4>
+<ul>
 <li><strong>选择排序、冒泡排序、堆排序</strong>，每一趟都能够归位一个，<strong>插入排序</strong>不能归位，只能是一个有序的序列，最小的和最大的都可能开没出现。</li>
 <li>排序趟数和原始排序有关：</li>
-<li><ul>
+<li>
+<ul>
 <li>插入排序(要通过反复比较选择插入位置)</li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li>冒泡排序(一次过后没有交换就说明排好了)</li>
 </ul>
 </li>
-<li><ul>
+<li>
+<ul>
 <li>快速排序(要是很有序的话，每一次全部序列都在一边，没法分成两半)</li>
 </ul>
 </li>
@@ -519,6 +553,12 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/06/22/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9AMarkdown/" title="一篇文章学会Markdown">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">一篇文章学会Markdown</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -581,6 +621,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -774,6 +820,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
