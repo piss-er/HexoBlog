@@ -105,3 +105,26 @@ deploy:
   type: git
   repository: git@github.com:piss-er/HexoBlog.git
   branch: run-page
+
+# 看板娘
+live2d:
+  enable: true  # 是否启动
+  scriptFrom: local # 默认
+  pluginRootPath: live2dw/  # 插件在站点上的根目录(相对路径)
+  pluginJsPath: lib/  # 脚本文件相对与插件根目录路径
+  pluginModelPath: assets/  # 模型文件相对与插件根目录路径
+  tagMode: false  # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false  # 调试, 是否在控制台输出日志
+  model:
+    # use: live2d-widget-model-wanko  ## 模型文件
+    use: live2d-widget-model-tororo  ## 模型文件
+  display:
+    position: right # 定位方向 left right top bottom
+    width: 150  # 小人宽度
+    height: 300 #  小人高度
+    hOffset: -10  # 向👇偏移
+    vOffset: -15  # 像👈偏移
+  mobile:
+    show: true  # 手机端是否显示
+  react:
+    opacity: 0.7  # 模型透明度
