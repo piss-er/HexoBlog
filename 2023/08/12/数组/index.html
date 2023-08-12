@@ -23,13 +23,16 @@
 <meta property="og:site_name" content="李小基的个人站">
 <meta property="og:description" content="🤔一些问题  C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小 12int size &#x3D; 5; &#x2F;&#x2F; 数组大小int* arr &#x3D; new int[size]; &#x2F;&#x2F; 动态分配一个大小为size的int类型数组  有没有类似Java中的ArrayList那样的可以方便插入,删除,获取length的线性表  在C++中，&lt;vector&gt;是一个标准库头文件，用于包">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/27.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95.gif">
+<meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif">
 <meta property="article:published_time" content="2023-08-12T02:59:05.603Z">
-<meta property="article:modified_time" content="2023-08-12T02:59:30.760Z">
+<meta property="article:modified_time" content="2023-08-12T13:24:11.111Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="力扣刷题">
 <meta property="article:tag" content="Java转C++">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://code-thinking.cdn.bcebos.com/gifs/27.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95.gif">
   
   
   
@@ -222,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          2.3k 字
         
       </span>
     
@@ -233,7 +236,7 @@
         
         
         
-          10 分钟
+          20 分钟
         
       </span>
     
@@ -307,7 +310,24 @@
 <h3 id="力扣刷题"><a class="markdownIt-Anchor" href="#力扣刷题"></a> 💪力扣刷题</h3>
 <h4 id="704-二分查找"><a class="markdownIt-Anchor" href="#704-二分查找"></a> 704. 二分查找</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/">力扣传送门</a></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 还没写</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>循环条件使用<code>begin&lt;=end</code>比较方便, 3个分支一定会进入一个, 只要没找到,<code>begin</code>或者<code>end</code>至少有一个发生变化</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-comment">// 使用闭区间[begin,end]缩小查找范围</span><br>        <span class="hljs-type">int</span> begin=<span class="hljs-number">0</span>, end=nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-type">int</span> mid;<br>        <span class="hljs-keyword">while</span>(begin&lt;=end)&#123;<br>            mid = (begin+end)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]==target)       <span class="hljs-comment">// 先比较mid位置</span><br>                <span class="hljs-keyword">return</span> mid;             <span class="hljs-comment">// 比较成功直接返回</span><br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(target&gt;nums[mid])   <span class="hljs-comment">// 如果在左边</span><br>                begin = mid+<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span>                        <span class="hljs-comment">// 如果在右边</span><br>                end = mid<span class="hljs-number">-1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 没找到</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="27-移除元素"><a class="markdownIt-Anchor" href="#27-移除元素"></a> 27. 移除元素</h4>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/">力扣传送门</a></p>
+<p><img src="https://code-thinking.cdn.bcebos.com/gifs/27.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95.gif" srcset="/img/loading.gif" lazyload alt="Alt text" /></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">removeElement</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> val)</span> </span>&#123;<br>        <span class="hljs-comment">// 快慢指针, 快指针指向旧数组, 慢指针指向新数组, 旧数组的数据给新数组的对应位置赋值</span><br>        <span class="hljs-type">int</span> slow=<span class="hljs-number">0</span>, fast=<span class="hljs-number">0</span>, len = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">while</span>(fast&lt;len)&#123;<br>            <span class="hljs-keyword">if</span>(nums[fast]==val)<br>                fast++;<br>            <span class="hljs-keyword">else</span>&#123;<br>                nums[slow] = nums[fast];<br>                slow++;<br>                fast++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> slow;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="977-有序数组的平方"><a class="markdownIt-Anchor" href="#977-有序数组的平方"></a> 977. 有序数组的平方</h4>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/">力扣传送门</a></p>
+<p><img src="https://code-thinking.cdn.bcebos.com/gifs/977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" srcset="/img/loading.gif" lazyload alt="" /></p>
+<blockquote>
+<p>从两边到中间, 数字的平方依次减小</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sortedSquares</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>, j=nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>, k=j;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">rs</span><span class="hljs-params">(nums.size())</span></span>;<br>        <span class="hljs-keyword">while</span>(k&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i]*nums[i]&gt;nums[j]*nums[j])&#123;<br>                rs[k] = nums[i]*nums[i];<br>                k--;<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                rs[k] = nums[j]*nums[j];<br>                k--;<br>                j--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> rs;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="209-长度最小的子数组"><a class="markdownIt-Anchor" href="#209-长度最小的子数组"></a> 209. 长度最小的子数组</h3>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">力扣传送门</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 还没做</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
