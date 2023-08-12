@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>数组(使用C++实现)</title>
+    <link href="/2023/08/12/%E6%95%B0%E7%BB%84/"/>
+    <url>/2023/08/12/%E6%95%B0%E7%BB%84/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一些问题"><a class="markdownIt-Anchor" href="#一些问题"></a> 🤔一些问题</h3><h4 id="c中数组无法用变量定义大小-如何像java那样用变量控制数组大小"><a class="markdownIt-Anchor" href="#c中数组无法用变量定义大小-如何像java那样用变量控制数组大小"></a> C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> size = <span class="hljs-number">5</span>; <span class="hljs-comment">// 数组大小</span><br><span class="hljs-type">int</span>* arr = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[size]; <span class="hljs-comment">// 动态分配一个大小为size的int类型数组</span><br></code></pre></td></tr></table></figure><h4 id="有没有类似java中的arraylist那样的可以方便插入删除获取length的线性表"><a class="markdownIt-Anchor" href="#有没有类似java中的arraylist那样的可以方便插入删除获取length的线性表"></a> 有没有类似Java中的ArrayList那样的可以方便插入,删除,获取length的线性表</h4><blockquote><p>在C++中，<code>&lt;vector&gt;</code>是一个标准库头文件，用于包含与向量容器相关的功能和类。向量是一种动态数组，可以在运行时调整大小，并提供了许多方便的操作和函数。</p></blockquote><blockquote><p>以下是一些<code>&lt;vector&gt;</code>头文件中常用的功能和用法：<br />创建向量</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><br>std::vector&lt;<span class="hljs-type">int</span>&gt; vec; <span class="hljs-comment">// 创建一个空的整数向量</span><br><span class="hljs-function">std::vector&lt;<span class="hljs-type">double</span>&gt; <span class="hljs-title">vec2</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span></span>; <span class="hljs-comment">// 创建一个包含5个元素的双精度浮点数向量</span><br>std::vector&lt;std::string&gt; vec3 = &#123;<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;orange&quot;</span>&#125;; <span class="hljs-comment">// 创建并初始化一个字符串向量</span><br></code></pre></td></tr></table></figure><blockquote><p>添加和访问元素：</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++">vec.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">// 在向量末尾添加元素</span><br>vec.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">20</span>);<br><br><span class="hljs-type">int</span> firstElement = vec[<span class="hljs-number">0</span>]; <span class="hljs-comment">// 访问向量中的第一个元素</span><br><span class="hljs-type">int</span> lastElement = vec.<span class="hljs-built_in">back</span>(); <span class="hljs-comment">// 访问向量中的最后一个元素</span><br></code></pre></td></tr></table></figure><blockquote><p>获取向量的大小和遍历元素：</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> size = vec.<span class="hljs-built_in">size</span>(); <span class="hljs-comment">// 获取向量的大小</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; vec.<span class="hljs-built_in">size</span>(); i++) &#123;<br>    std::cout &lt;&lt; vec[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <span class="hljs-comment">// 遍历向量中的元素</span><br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> element : vec) &#123;<br>    std::cout &lt;&lt; element &lt;&lt; <span class="hljs-string">&quot; &quot;</span>; <span class="hljs-comment">// 使用范围-based for 循环遍历向量中的元素</span><br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>插入和删除元素：</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++">vec.<span class="hljs-built_in">insert</span>(vec.<span class="hljs-built_in">begin</span>() + <span class="hljs-number">2</span>, <span class="hljs-number">30</span>); <span class="hljs-comment">// 在指定位置插入元素</span><br>vec.<span class="hljs-built_in">erase</span>(vec.<span class="hljs-built_in">begin</span>() + <span class="hljs-number">1</span>); <span class="hljs-comment">// 删除指定位置的元素</span><br>vec.<span class="hljs-built_in">clear</span>(); <span class="hljs-comment">// 清空向量中的所有元素</span><br></code></pre></td></tr></table></figure><blockquote><p>其他常用操作：</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">bool</span> isEmpty = vec.<span class="hljs-built_in">empty</span>(); <span class="hljs-comment">// 检查向量是否为空</span><br>vec.<span class="hljs-built_in">resize</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">// 调整向量的大小为10</span><br>vec.<span class="hljs-built_in">pop_back</span>(); <span class="hljs-comment">// 删除向量中的最后一个元素</span><br>vec.<span class="hljs-built_in">sort</span>(); <span class="hljs-comment">// 对向量进行排序（需要包含&lt;algorithm&gt;头文件）</span><br></code></pre></td></tr></table></figure><h3 id="力扣刷题"><a class="markdownIt-Anchor" href="#力扣刷题"></a> 💪力扣刷题</h3><h4 id="704-二分查找"><a class="markdownIt-Anchor" href="#704-二分查找"></a> 704. 二分查找</h4><p><a href="https://leetcode.cn/problems/binary-search/">力扣传送门</a></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 还没写</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>力扣刷题</tag>
+      
+      <tag>Java转C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>链表(使用C++实现)</title>
     <link href="/2023/08/11/%E9%93%BE%E8%A1%A8/"/>
     <url>/2023/08/11/%E9%93%BE%E8%A1%A8/</url>
