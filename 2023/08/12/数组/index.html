@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif">
 <meta property="article:published_time" content="2023-08-12T02:59:05.603Z">
-<meta property="article:modified_time" content="2023-08-13T08:34:13.226Z">
+<meta property="article:modified_time" content="2023-08-13T08:35:14.889Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -331,7 +331,7 @@
 <h4 id="209-长度最小的子数组"><a class="markdownIt-Anchor" href="#209-长度最小的子数组"></a> 209. 长度最小的子数组</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">力扣传送门</a></p>
 <blockquote>
-<p>记录最小值, 那么就需要预先赋值一个最大值, C<ins>中的整型最大值为<code>INT32_MAX</code>,<code>INT32_MAX</code>是一个预定义的常量，不需要引入任何库来使用它。它是在标准的C</ins>头文件<code>&lt;limits.h&gt;</code>或<code>&lt;cstdint&gt;</code>中定义的。只要包含其中一个头文件，就可以直接使用<code>INT32_MAX</code>常量，无需额外的库。以下是一个示例代码：</p>
+<p>记录最小值, 那么就需要预先赋值一个最大值, C++中的整型最大值为<code>INT32_MAX</code>,<code>INT32_MAX</code>是一个预定义的常量，不需要引入任何库来使用它。它是在标准的C++头文件<code>&lt;limits.h&gt;</code>或<code>&lt;cstdint&gt;</code>中定义的。只要包含其中一个头文件，就可以直接使用<code>INT32_MAX</code>常量，无需额外的库。以下是一个示例代码：</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdint&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int32_t</span> maxInt = INT32_MAX;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;最大整数值：&quot;</span> &lt;&lt; maxInt &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
