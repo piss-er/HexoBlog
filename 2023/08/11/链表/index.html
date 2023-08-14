@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://code-thinking-1253855093.file.myqcloud.com/pics/20220925103433.png">
 <meta property="article:published_time" content="2023-08-11T15:52:56.850Z">
-<meta property="article:modified_time" content="2023-08-14T13:46:29.809Z">
+<meta property="article:modified_time" content="2023-08-14T13:49:26.933Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -334,7 +334,7 @@
 <p>假设从头结点到环形入口节点 的节点数为x, 环形入口节点到 <code>fast</code>指针与<code>slow</code>指针相遇节点 节点数为y, 从相遇节点 再到环形入口节点节点数为 z</p>
 </blockquote>
 <blockquote>
-<p>那么相遇时： <code>slow</code>指针走过的节点数为: <code>x + y</code>， <code>fast</code>指针走过的节点数：<code>x + y + n (y + z)</code>，n为<code>fast``指针在环内走了n圈才遇到</code>slow<code>指针，</code>（y+z）`为 一圈内节点的个数A。</p>
+<p>那么相遇时： <code>slow</code>指针走过的节点数为: <code>x + y</code>， <code>fast</code>指针走过的节点数：<code>x + y + n (y + z)</code>，n为<code>fast</code>指针在环内走了n圈才遇到<code>slow</code>指针， <code>(y+z)</code>为 一圈内节点的个数A。</p>
 </blockquote>
 <blockquote>
 <p>因为<code>fast</code>指针是一步走两个节点，<code>slow</code>指针一步走一个节点， 所以 <code>fast指针走过的节点数 = slow指针走过的节点数 * 2</code>：</p>
@@ -343,7 +343,7 @@
 <p><code>(x + y) * 2 = x + y + n (y + z)</code></p>
 </blockquote>
 <blockquote>
-<p>两边消掉一个<code>（x+y）: x + y = n (y + z)</code></p>
+<p>两边消掉一个<code>(x+y): x + y = n (y + z)</code></p>
 </blockquote>
 <blockquote>
 <p>因为要找环形的入口，那么要求的是x，因为x表示 头结点到 环形入口节点的的距离。</p>
@@ -352,7 +352,7 @@
 <p>所以要求x ，将x单独放在左面：<code>x = n (y + z) - y</code> ,</p>
 </blockquote>
 <blockquote>
-<p>再从<code>n(y+z)</code>中提出一个 <code>（y+z）</code>来，整理公式之后为如下公式：<code>x = (n - 1) (y + z) + z</code> 注意这里n一定是大于等于1的，因为 <code>fast</code>指针至少要多走一圈才能相遇<code>slow</code>指针</p>
+<p>再从<code>n(y+z)</code>中提出一个 <code>(y+z)</code>来，整理公式之后为如下公式：<code>x = (n - 1) (y + z) + z</code> 注意这里n一定是大于等于1的，因为 <code>fast</code>指针至少要多走一圈才能相遇<code>slow</code>指针</p>
 </blockquote>
 <blockquote>
 <p>这个公式说明什么呢？</p>
