@@ -25,9 +25,12 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/27.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95.gif">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif">
+<meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif">
 <meta property="article:published_time" content="2023-08-12T02:59:05.603Z">
-<meta property="article:modified_time" content="2023-08-12T13:24:11.111Z">
+<meta property="article:modified_time" content="2023-08-14T12:37:28.657Z">
 <meta property="article:author" content="李小基">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="力扣刷题">
 <meta property="article:tag" content="Java转C++">
@@ -225,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          4.1k 字
         
       </span>
     
@@ -236,7 +239,7 @@
         
         
         
-          20 分钟
+          35 分钟
         
       </span>
     
@@ -325,9 +328,25 @@
 <p>从两边到中间, 数字的平方依次减小</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sortedSquares</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>, j=nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>, k=j;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">rs</span><span class="hljs-params">(nums.size())</span></span>;<br>        <span class="hljs-keyword">while</span>(k&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i]*nums[i]&gt;nums[j]*nums[j])&#123;<br>                rs[k] = nums[i]*nums[i];<br>                k--;<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                rs[k] = nums[j]*nums[j];<br>                k--;<br>                j--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> rs;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h3 id="209-长度最小的子数组"><a class="markdownIt-Anchor" href="#209-长度最小的子数组"></a> 209. 长度最小的子数组</h3>
+<h4 id="209-长度最小的子数组"><a class="markdownIt-Anchor" href="#209-长度最小的子数组"></a> 209. 长度最小的子数组</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">力扣传送门</a></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 还没做</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>记录最小值, 那么就需要预先赋值一个最大值, C++中的整型最大值为<code>INT32_MAX</code>,<code>INT32_MAX</code>是一个预定义的常量，不需要引入任何库来使用它。它是在标准的C++头文件<code>&lt;limits.h&gt;</code>或<code>&lt;cstdint&gt;</code>中定义的。只要包含其中一个头文件，就可以直接使用<code>INT32_MAX</code>常量，无需额外的库。以下是一个示例代码：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdint&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int32_t</span> maxInt = INT32_MAX;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;最大整数值：&quot;</span> &lt;&lt; maxInt &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>使用滑动窗口, 两个窗口闭区间内判断是否符合要求, 循环条件为窗口末端指针<code>j</code>遍历整个数组, 如果符合要求就通过移动窗口前端的指针<code>i</code>来逐步缩小窗口, 看看能缩小到什么程度, 如果缩小导致窗口内数字的和小于<code>target</code>, 那么就移动窗口后端指针<code>j</code>, 如果<code>j==nums.size()-1</code>但是和小于<code>target</code>, 那么要终止循环</p>
+</blockquote>
+<p><img src="https://code-thinking.cdn.bcebos.com/gifs/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif" srcset="/img/loading.gif" lazyload alt="" /></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-type">int</span> target, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> rs = INT32_MAX;<br>        <span class="hljs-comment">// 两个窗口指针</span><br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>,len=nums.<span class="hljs-built_in">size</span>(),num=nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">while</span>(j&lt;len)&#123;<br>            <span class="hljs-keyword">if</span>(j==len<span class="hljs-number">-1</span> &amp;&amp; num&lt;target)  <span class="hljs-comment">// 已经到了最后一个数字但是不能继续后移j</span><br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(j!=len<span class="hljs-number">-1</span> &amp;&amp; num&lt;target)&#123; <span class="hljs-comment">// 没有到达最后一个数字, 且需要后移j</span><br>                j++;<br>                num+=nums[j];<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;                       <span class="hljs-comment">// num&gt;=target, 后移i</span><br>                rs = <span class="hljs-built_in">min</span>(rs,j-i+<span class="hljs-number">1</span>);<br>                num-=nums[i];<br>                i++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> rs==INT32_MAX ? <span class="hljs-number">0</span> : rs;  <span class="hljs-comment">// 如果没找到符合要求的窗口那么返回0</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="59-螺旋矩阵-ii"><a class="markdownIt-Anchor" href="#59-螺旋矩阵-ii"></a> 59. 螺旋矩阵 II</h4>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix-ii/">力扣传送门</a></p>
+<blockquote>
+<p>方法很多, 主要考察对代码的掌控能力<br />
+思路一: 可以再写一个方法用于控制方向, 坐标(i,j)顺时针运动, 转变关系为(0,+1)-&gt;(+1,0)-&gt;(0,-1)-&gt;(-1,0), 循环条件使用一个计数的变量, 当他等于n<sup>2</sup>的时候就是终点<br />
+思路二: 用圈数控制循环, 每一圈的四个方向都写一遍, 其中如果n为基数, 最中间那个位置不太容易赋值, 放在最后判断n为奇数的时候赋值</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">generateMatrix</span>(<span class="hljs-type">int</span> n) &#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">rs</span>(n,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n,<span class="hljs-number">0</span>));<br>        <span class="hljs-type">int</span> k=<span class="hljs-number">1</span>,loop=<span class="hljs-number">1</span>,end_loop=n/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">while</span>(loop&lt;=end_loop)&#123;<br>            <span class="hljs-type">int</span> from=loop<span class="hljs-number">-1</span>,end=n-loop;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=from,j=i;j&lt;end;j++)&#123;<br>                rs[i][j] = k;<br>                k++;    <br>            &#125;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=from,j=end;i&lt;end;i++)&#123;<br>                rs[i][j] = k;<br>                k++;<br>            &#125;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=end,j=end;j&gt;from;j--)&#123;<br>                rs[i][j] = k;<br>                k++;<br>            &#125;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=end,j=from;i&gt;from;i--)&#123;<br>                rs[i][j] = k;<br>                k++;<br>            &#125;<br>            loop++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>!=<span class="hljs-number">0</span>)&#123;<br>            rs[n/<span class="hljs-number">2</span>][n/<span class="hljs-number">2</span>] = k;<br>        &#125;<br>        <span class="hljs-keyword">return</span> rs;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -360,6 +379,10 @@
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
       
         <a href="/tags/C/">#C++</a>
       
@@ -421,6 +444,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/08/12/%E9%AA%A1%E5%84%BF%E5%BE%80%E4%B8%8A%E7%9E%A7,%20%E9%A9%AC%E5%84%BF%E5%90%91%E4%B8%8B%E7%9C%8B/" title="骡儿往上瞧, 马儿向下看">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">骡儿往上瞧, 马儿向下看</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
