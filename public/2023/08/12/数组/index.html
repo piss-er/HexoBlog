@@ -16,18 +16,18 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="🤔一些问题  C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小 12int size &#x3D; 5; &#x2F;&#x2F; 数组大小int* arr &#x3D; new int[size]; &#x2F;&#x2F; 动态分配一个大小为size的int类型数组  有没有类似Java中的ArrayList那样的可以方便插入,删除,获取length的线性表  在C++中，&lt;vector&gt;是一个标准库头文件，用于包">
+    <meta name="description" content="🤔一些问题  C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小 12int size &#x3D; 5; &#x2F;&#x2F; 数组大小int* arr &#x3D; new int[size]; &#x2F;&#x2F; 动态分配一个大小为size的int类型数组  应该如何遍历一个未知大小的数组呢?  C++中数组没有求大小的内置函数, 数组大小的求法: sizeof(arr) &#x2F; sizeof(arr[0])  1234">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组(使用C++实现)">
 <meta property="og:url" content="http://example.com/2023/08/12/%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="🤔一些问题  C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小 12int size &#x3D; 5; &#x2F;&#x2F; 数组大小int* arr &#x3D; new int[size]; &#x2F;&#x2F; 动态分配一个大小为size的int类型数组  有没有类似Java中的ArrayList那样的可以方便插入,删除,获取length的线性表  在C++中，&lt;vector&gt;是一个标准库头文件，用于包">
+<meta property="og:description" content="🤔一些问题  C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小 12int size &#x3D; 5; &#x2F;&#x2F; 数组大小int* arr &#x3D; new int[size]; &#x2F;&#x2F; 动态分配一个大小为size的int类型数组  应该如何遍历一个未知大小的数组呢?  C++中数组没有求大小的内置函数, 数组大小的求法: sizeof(arr) &#x2F; sizeof(arr[0])  1234">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/27.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0-%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95.gif">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif">
 <meta property="article:published_time" content="2023-08-12T02:59:05.603Z">
-<meta property="article:modified_time" content="2023-08-14T12:37:28.657Z">
+<meta property="article:modified_time" content="2023-08-15T16:20:41.031Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k 字
+          4.3k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          35 分钟
+          36 分钟
         
       </span>
     
@@ -285,6 +285,11 @@
                 <h3 id="一些问题"><a class="markdownIt-Anchor" href="#一些问题"></a> 🤔一些问题</h3>
 <h4 id="c中数组无法用变量定义大小-如何像java那样用变量控制数组大小"><a class="markdownIt-Anchor" href="#c中数组无法用变量定义大小-如何像java那样用变量控制数组大小"></a> C++中数组无法用变量定义大小, 如何像Java那样用变量控制数组大小</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> size = <span class="hljs-number">5</span>; <span class="hljs-comment">// 数组大小</span><br><span class="hljs-type">int</span>* arr = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[size]; <span class="hljs-comment">// 动态分配一个大小为size的int类型数组</span><br></code></pre></td></tr></table></figure>
+<h4 id="应该如何遍历一个未知大小的数组呢"><a class="markdownIt-Anchor" href="#应该如何遍历一个未知大小的数组呢"></a> 应该如何遍历一个未知大小的数组呢?</h4>
+<blockquote>
+<p>C++中数组没有求大小的内置函数, 数组大小的求法: <code>sizeof(arr) / sizeof(arr[0])</code></p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> arr[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;<br><span class="hljs-type">int</span> size = <span class="hljs-built_in">sizeof</span>(arr) / <span class="hljs-built_in">sizeof</span>(arr[<span class="hljs-number">0</span>]);<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>    <span class="hljs-comment">// 访问数组元素 arr[i]</span><br>    <span class="hljs-comment">// 进行相应的操作</span><br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="有没有类似java中的arraylist那样的可以方便插入删除获取length的线性表"><a class="markdownIt-Anchor" href="#有没有类似java中的arraylist那样的可以方便插入删除获取length的线性表"></a> 有没有类似Java中的ArrayList那样的可以方便插入,删除,获取length的线性表</h4>
 <blockquote>
 <p>在C++中，<code>&lt;vector&gt;</code>是一个标准库头文件，用于包含与向量容器相关的功能和类。向量是一种动态数组，可以在运行时调整大小，并提供了许多方便的操作和函数。</p>
