@@ -24,7 +24,7 @@
 <meta property="og:description" content="😲示例  主要使用map和set, 如果是键值对结构就使用map, 如果不是键值对结构但是需要去重, 就使用set   unordered_set是C++标准库中的一个容器，用于存储唯一的元素集合，所以需要去重的数据可以用它来存, 元素的存储顺序是无序的。下面是unordered_set的基本用法、常见函数和遍历方法：  123456789101112131415161718192021222">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-15T16:21:25.515Z">
-<meta property="article:modified_time" content="2023-08-15T16:23:37.251Z">
+<meta property="article:modified_time" content="2023-08-16T14:57:55.795Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.8k 字
+          5.6k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          40 分钟
+          47 分钟
         
       </span>
     
@@ -325,6 +325,16 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">rs</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span>;              <span class="hljs-comment">// 用于保存结果</span><br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; my_map;  <span class="hljs-comment">// 用于保存没一个数字的下标</span><br>        <span class="hljs-type">int</span> len = nums.<span class="hljs-built_in">size</span>();          <span class="hljs-comment">// 存一下大小, 避免反复访问</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;len; i++)        <span class="hljs-comment">// 存储没一个数的下标</span><br>            my_map[nums[i]] = i;        <span class="hljs-comment">// 数字为键, 下标为值</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;len; i++)&#123;       <span class="hljs-comment">// 查找每一个数被target减去的差在不在数组中</span><br>            <span class="hljs-keyword">auto</span> it = my_map.<span class="hljs-built_in">find</span>(target-nums[i]);  <span class="hljs-comment">// 获取差的下标</span><br>            <span class="hljs-keyword">if</span>(it!=my_map.<span class="hljs-built_in">end</span>() &amp;&amp; it-&gt;second!=i)&#123;  <span class="hljs-comment">// 如果存在差, 并且不是自己</span><br>                rs[<span class="hljs-number">0</span>] = i;                          <span class="hljs-comment">// 存本身的下标</span><br>                rs[<span class="hljs-number">1</span>] = it-&gt;second;                 <span class="hljs-comment">// 存差的下标</span><br>                <span class="hljs-keyword">break</span>;                              <span class="hljs-comment">// 跳出循环</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> rs;;                                 <span class="hljs-comment">// 返回结果</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h4 id="454-四数相加-ii"><a class="markdownIt-Anchor" href="#454-四数相加-ii"></a> 454. 四数相加 II</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/4sum-ii/">力扣传送门</a></p>
+<blockquote>
+<p>先统计前两个数组的所有和, 用map, 键是和, 值是和出现的次数<br />
+再统计后两个数组的所有和, 不用新建map, 直接查之前的那个map里有没有相反数, 有的话结果就加上对应的情况数目</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fourSumCount</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums1, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums2, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums3, vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums4)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; my_map;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:nums1)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j:nums2)&#123;<br>                my_map[i+j]++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:nums3)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j:nums4)&#123;<br>                <span class="hljs-keyword">if</span>(my_map.<span class="hljs-built_in">find</span>(<span class="hljs-number">0</span>-i-j)!=my_map.<span class="hljs-built_in">end</span>())&#123;<br>                    count+=my_map[<span class="hljs-number">0</span>-i-j];<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="383-赎金信"><a class="markdownIt-Anchor" href="#383-赎金信"></a> 383. 赎金信</h4>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ransom-note/">力扣传送门</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canConstruct</span><span class="hljs-params">(string ransomNote, string magazine)</span> </span>&#123;<br>        <span class="hljs-type">int</span> letter[<span class="hljs-number">26</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> i:magazine)<br>            letter[i-<span class="hljs-string">&#x27;a&#x27;</span>]++;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> i:ransomNote)<br>            letter[i-<span class="hljs-string">&#x27;a&#x27;</span>]--;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:letter)<br>            <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h4 id="15-三数之和"><a class="markdownIt-Anchor" href="#15-三数之和"></a> 15. 三数之和</h4>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/">力扣传送门</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 还没做</span><br></code></pre></td></tr></table></figure>
 
                 
@@ -423,6 +433,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/08/16/%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串(使用C++实现)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">字符串(使用C++实现)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
