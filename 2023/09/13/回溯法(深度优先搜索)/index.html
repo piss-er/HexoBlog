@@ -16,15 +16,15 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="😲示例  回溯的本质是穷举, 即按照一定的顺序对元素进行排列组合找到所有可能情况, 随后筛选出需要的一个最优情况或者符合要求的多个情况   如果一个问题可以抽象成数学中的排列组合, 那么也可以使用回溯法来找到所有的排列组合, 其中, 排列不用去重, 组合需要去重  123456789101112131415161718vector&lt;vector&lt;int&gt;&gt; result">
+    <meta name="description" content="😲示例  回溯的本质是穷举, 即按照一定的顺序对元素进行排列组合找到所有可能情况, 随后筛选出需要的一个最优情况或者符合要求的多个情况   如果一个问题可以抽象成数学中的排列组合, 那么也可以使用回溯法来找到所有的排列组合, 其中, 排列不用去重, 组合需要去重   回溯法使用的搜索方式可以看作深度优先搜索, 即按一种方式搜索到尽头之后再回退   下面展示一种回溯法的经典写法  1234567">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回溯法-深度优先搜索(使用C++实现)">
 <meta property="og:url" content="http://example.com/2023/09/13/%E5%9B%9E%E6%BA%AF%E6%B3%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2)/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="😲示例  回溯的本质是穷举, 即按照一定的顺序对元素进行排列组合找到所有可能情况, 随后筛选出需要的一个最优情况或者符合要求的多个情况   如果一个问题可以抽象成数学中的排列组合, 那么也可以使用回溯法来找到所有的排列组合, 其中, 排列不用去重, 组合需要去重  123456789101112131415161718vector&lt;vector&lt;int&gt;&gt; result">
+<meta property="og:description" content="😲示例  回溯的本质是穷举, 即按照一定的顺序对元素进行排列组合找到所有可能情况, 随后筛选出需要的一个最优情况或者符合要求的多个情况   如果一个问题可以抽象成数学中的排列组合, 那么也可以使用回溯法来找到所有的排列组合, 其中, 排列不用去重, 组合需要去重   回溯法使用的搜索方式可以看作深度优先搜索, 即按一种方式搜索到尽头之后再回退   下面展示一种回溯法的经典写法  1234567">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-13T11:33:49.917Z">
-<meta property="article:modified_time" content="2023-10-07T05:33:38.144Z">
+<meta property="article:modified_time" content="2023-10-07T05:37:53.059Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -235,7 +235,7 @@
         
         
         
-          55 分钟
+          56 分钟
         
       </span>
     
@@ -284,6 +284,12 @@
 </blockquote>
 <blockquote>
 <p>如果一个问题可以抽象成数学中的排列组合, 那么也可以使用回溯法来找到所有的排列组合, 其中, 排列不用去重, 组合需要去重</p>
+</blockquote>
+<blockquote>
+<p>回溯法使用的搜索方式可以看作深度优先搜索, 即按一种方式搜索到尽头之后再回退</p>
+</blockquote>
+<blockquote>
+<p>下面展示一种回溯法的经典写法</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; result;     <span class="hljs-comment">// 结果</span><br>vector&lt;<span class="hljs-type">int</span>&gt; path;               <span class="hljs-comment">// 路径</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(......)</span></span>&#123;               <span class="hljs-comment">// 深度优先搜索</span><br>    <span class="hljs-keyword">if</span>(......)&#123;                 <span class="hljs-comment">// 终点条件</span><br>        result.<span class="hljs-built_in">push_back</span>(path); <span class="hljs-comment">// 添加这一次的路径</span><br>        <span class="hljs-keyword">return</span>;                 <span class="hljs-comment">// 向上回溯</span><br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=start; i&lt;=n; i++)&#123;<span class="hljs-comment">// 向下挨个搜索</span><br>        path.<span class="hljs-built_in">push_back</span>(i);      <span class="hljs-comment">// 添加一个节点</span><br>        <span class="hljs-built_in">dfs</span>(n,k,i+<span class="hljs-number">1</span>);           <span class="hljs-comment">// 向下搜索</span><br>        path.<span class="hljs-built_in">pop_back</span>();        <span class="hljs-comment">// 回溯</span><br>    &#125;<br>&#125;<br><br>vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; ......(......)&#123;<br>    <span class="hljs-built_in">dfs</span>(......);<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="一些疑问解答"><a class="markdownIt-Anchor" href="#一些疑问解答"></a> 🤔一些疑问解答</h3>
