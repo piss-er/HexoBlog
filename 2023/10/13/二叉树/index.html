@@ -16,15 +16,15 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="😲示例  二叉树在C中的一般写法如下所示, 其中nullptr和NULL都是在C中被承认的空指针表示方法  12345678struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode() : val(0), left(nullptr), right(nullptr) &amp;#123;&amp;#">
+    <meta name="description" content="😲示例  二叉树在C++中的一般写法如下所示, 其中nullptr和NULL都是在C++中被承认的空指针表示方法  12345678struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode() : val(0), left(nullptr), right(nullptr) &amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树(使用C++实现)">
 <meta property="og:url" content="http://example.com/2023/10/13/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="😲示例  二叉树在C中的一般写法如下所示, 其中nullptr和NULL都是在C中被承认的空指针表示方法  12345678struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode() : val(0), left(nullptr), right(nullptr) &amp;#123;&amp;#">
+<meta property="og:description" content="😲示例  二叉树在C++中的一般写法如下所示, 其中nullptr和NULL都是在C++中被承认的空指针表示方法  12345678struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode() : val(0), left(nullptr), right(nullptr) &amp;#12">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-13T02:40:29.889Z">
-<meta property="article:modified_time" content="2023-10-13T02:40:59.011Z">
+<meta property="article:modified_time" content="2023-10-13T02:43:47.823Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.4k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          22 分钟
+          20 分钟
         
       </span>
     
@@ -280,21 +280,19 @@
                 
                 <h3 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 😲示例</h3>
 <blockquote>
-<p>二叉树在C<ins>中的一般写法如下所示, 其中<code>nullptr</code>和<code>NULL</code>都是在C</ins>中被承认的空指针表示方法</p>
+<p>二叉树在C++中的一般写法如下所示, 其中<code>nullptr</code>和<code>NULL</code>都是在C++中被承认的空指针表示方法</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">TreeNode</span> &#123;<br>    <span class="hljs-type">int</span> val;<br>    TreeNode *left;<br>    TreeNode *right;<br>    <span class="hljs-built_in">TreeNode</span>() : <span class="hljs-built_in">val</span>(<span class="hljs-number">0</span>), <span class="hljs-built_in">left</span>(<span class="hljs-literal">nullptr</span>), <span class="hljs-built_in">right</span>(<span class="hljs-literal">nullptr</span>) &#123;&#125;<br>    <span class="hljs-built_in">TreeNode</span>(<span class="hljs-type">int</span> x) : <span class="hljs-built_in">val</span>(x), <span class="hljs-built_in">left</span>(<span class="hljs-literal">nullptr</span>), <span class="hljs-built_in">right</span>(<span class="hljs-literal">nullptr</span>) &#123;&#125;<br>    <span class="hljs-built_in">TreeNode</span>(<span class="hljs-type">int</span> x, TreeNode *left, TreeNode *right) : <span class="hljs-built_in">val</span>(x), <span class="hljs-built_in">left</span>(left), <span class="hljs-built_in">right</span>(right) &#123;&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h3 id="一些疑问解答"><a class="markdownIt-Anchor" href="#一些疑问解答"></a> 🤔一些疑问解答</h3>
 <h4 id="nullptr和null有什么区别"><a class="markdownIt-Anchor" href="#nullptr和null有什么区别"></a> <code>nullptr</code>和<code>NULL</code>有什么区别?</h4>
 <blockquote>
 <p><code>NULL</code>和<code>nullptr</code>都用于表示空指针，但它们有一些区别。</p>
-<p><code>NULL</code>是一个<strong>宏定义</strong>，通常被定义为整数0。在早期的C<ins>标准中，<code>NULL</code>被用作空指针的表示。然而，由于整数0也可以被用于表示其他含义，例如整数类型的零值，这可能导致一些潜在的问题。因此，在C</ins>11标准中，引入了新的关键字<code>nullptr</code>来表示空指针。</p>
-<p><code>nullptr</code>是一个<strong>关键字</strong>，专门用于表示空指针。与<code>NULL</code>不同，<code>nullptr</code>的类型是<code>nullptr_t</code>，它是一个独立的类型，可以<strong>隐式转换</strong><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote">&lt;span class=“hint–top hint–rounded” aria-label=&quot;例如<code>byte</code>类型的数字<code>12</code>可以隐式转换为<code>int</code>类型,但是<code>int</code>类型的<code>12</code>转换为<code>byte</code>类型需要显式转换,<code>(byte)12</code>,这里展示的是在高级语言中显隐式转换如何体现,高精度和低精度的转换关系,然而它在编译中一定有另一种体现方式,这里的<code>nullptr_t</code>类型可以隐式转换为任何类型便是这个意思,它可以在汇编层面隐式转换为任何类型,而不是我们常规理解的在高级语言层面的高低精度转换</p>
-</blockquote>
-<h3 id="力扣刷题1spanasup为任何指针类型-这样可以避免了null可能引起的一些类型转换问题"><a class="markdownIt-Anchor" href="#力扣刷题1spanasup为任何指针类型-这样可以避免了null可能引起的一些类型转换问题"></a> 💪力扣刷题&quot;&gt;[1]</span></a></sup>为任何指针类型。这样可以避免了<code>NULL</code>可能引起的一些类型转换问题。</h3>
-<blockquote>
+<p><code>NULL</code>是一个<strong>宏定义</strong>，通常被定义为整数0。在早期的C++标准中，<code>NULL</code>被用作空指针的表示。然而，由于整数0也可以被用于表示其他含义，例如整数类型的零值，这可能导致一些潜在的问题。因此，在C++11标准中，引入了新的关键字<code>nullptr</code>来表示空指针。</p>
+<p><code>nullptr</code>是一个<strong>关键字</strong>，专门用于表示空指针。与<code>NULL</code>不同，<code>nullptr</code>的类型是<code>nullptr_t</code>，它是一个独立的类型，可以<strong>隐式转换</strong><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="例如`byte`类型的数字`12`可以隐式转换为`int`类型,但是`int`类型的`12`转换为`byte`类型需要显式转换,`(byte)12`,这里展示的是在高级语言中显隐式转换如何体现,高精度和低精度的转换关系,然而它在编译中一定有另一种体现方式,这里的`nullptr_t`类型可以隐式转换为任何类型便是这个意思,它可以在汇编层面隐式转换为任何类型,而不是我们常规理解的在高级语言层面的高低精度转换">[1]</span></a></sup>为任何指针类型。这样可以避免了<code>NULL</code>可能引起的一些类型转换问题。</p>
 <p>使用<code>nullptr</code>可以提供更好的类型安全性，因为它只能用于指针类型，而不能用于整数类型。这样可以在编译时捕获一些潜在的错误。</p>
 <p>总结一下，<code>NULL</code>是一个宏定义，通常被定义为整数0，而<code>nullptr</code>是一个关键字，用于表示空指针，并提供了更好的类型安全性。<strong>在现代的C++代码中，推荐使用<code>nullptr</code>来表示空指针</strong>。</p>
 </blockquote>
+<h3 id="力扣刷题"><a class="markdownIt-Anchor" href="#力扣刷题"></a> 💪力扣刷题</h3>
 <h4 id="144-二叉树的前序遍历"><a class="markdownIt-Anchor" href="#144-二叉树的前序遍历"></a> 144. 二叉树的前序遍历</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-preorder-traversal/">力扣传送门</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * struct TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode *left;</span><br><span class="hljs-comment"> *     TreeNode *right;</span><br><span class="hljs-comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; result;<br>        <span class="hljs-built_in">dfs</span>(root,result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(TreeNode* root, vector&lt;<span class="hljs-type">int</span>&gt;&amp; result)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">nullptr</span>)<br>            <span class="hljs-keyword">return</span>;<br>        result.<span class="hljs-built_in">push_back</span>(root-&gt;val);<br>        <span class="hljs-built_in">dfs</span>(root-&gt;left,result);<br>        <span class="hljs-built_in">dfs</span>(root-&gt;right,result);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
@@ -304,8 +302,8 @@
 <h4 id="94-二叉树的中序遍历"><a class="markdownIt-Anchor" href="#94-二叉树的中序遍历"></a> 94. 二叉树的中序遍历</h4>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-inorder-traversal/">力扣传送门</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; result;<br>        <span class="hljs-built_in">dfs</span>(root,result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(TreeNode* root, vector&lt;<span class="hljs-type">int</span>&gt;&amp; result)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">nullptr</span>)<br>            <span class="hljs-keyword">return</span>;<br>        <span class="hljs-built_in">dfs</span>(root-&gt;left,result);<br>        result.<span class="hljs-built_in">push_back</span>(root-&gt;val);<br>        <span class="hljs-built_in">dfs</span>(root-&gt;right,result);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>例如<code>byte</code>类型的数字<code>12</code>可以隐式转换为<code>int</code>类型,但是<code>int</code>类型的<code>12</code>转换为<code>byte</code>类型需要显式转换,<code>(byte)12</code>,这里展示的是在高级语言中显隐式转换如何体现,高精度和低精度的转换关系,然而它在编译中一定有另一种体现方式,这里的<code>nullptr_t</code>类型可以隐式转换为任何类型便是这个意思,它可以在汇编层面隐式转换为任何类型,而不是我们常规理解的在高级语言层面的高低精度转换
-<h3 id="力扣刷题"><a class="markdownIt-Anchor" href="#力扣刷题"></a> 💪力扣刷题</h3>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<p><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section></p>
+
                 
               </div>
             
