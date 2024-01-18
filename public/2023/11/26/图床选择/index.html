@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李小基">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="评价现在各种图床方案  写博客的时候如果图片都在本地的话, 那么上传文章到在线博客(公众号\知乎\CSDN\个人博客…)的时候会造成图片无法访问, 此时就需要用到图床 图床就是一个用于存放图片, 同时提供针对每个图片文件的链接的服务器 有了图床就可以在markdown文档中这样写图片  1![图片名字](图片链接) 图床有很多方案  使用代码托管平台(GitHub) 图床平台 SM.MS, Im">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图床选择">
+<meta property="og:url" content="http://example.com/2023/11/26/%E5%9B%BE%E5%BA%8A%E9%80%89%E6%8B%A9/index.html">
+<meta property="og:site_name" content="李小基的个人站">
+<meta property="og:description" content="评价现在各种图床方案  写博客的时候如果图片都在本地的话, 那么上传文章到在线博客(公众号\知乎\CSDN\个人博客…)的时候会造成图片无法访问, 此时就需要用到图床 图床就是一个用于存放图片, 同时提供针对每个图片文件的链接的服务器 有了图床就可以在markdown文档中这样写图片  1![图片名字](图片链接) 图床有很多方案  使用代码托管平台(GitHub) 图床平台 SM.MS, Im">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231127193532.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223018.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223456.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223921.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224001.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-26%20215351.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224353.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224409.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224449.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224525.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224553.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224640.png">
+<meta property="og:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126225030.png">
+<meta property="og:image" content="https://s2.loli.net/2023/11/27/itSz64RHfAgxNGD.png">
+<meta property="article:published_time" content="2023-11-26T08:01:02.323Z">
+<meta property="article:modified_time" content="2023-11-27T12:50:55.731Z">
+<meta property="article:author" content="李小基">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231127193532.png">
+  
+  
+  
+  <title>图床选择 - 李小基的个人站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>李小基的个人站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="图床选择"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-11-26 16:01" pubdate>
+          2023年11月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">图床选择</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="评价现在各种图床方案"><a class="markdownIt-Anchor" href="#评价现在各种图床方案"></a> 评价现在各种图床方案</h3>
+<blockquote>
+<p>写博客的时候如果图片都在本地的话, 那么上传文章到在线博客(公众号\知乎\CSDN\个人博客…)的时候会造成图片无法访问, 此时就需要用到图床<br />
+<strong>图床</strong>就是一个用于存放图片, 同时提供针对每个图片文件的链接的服务器<br />
+有了图床就可以在markdown文档中这样写图片</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">图片名字</span>](<span class="hljs-link">图片链接</span>)<br></code></pre></td></tr></table></figure>
+<p>图床有很多方案</p>
+<ol>
+<li>使用代码托管平台(GitHub)</li>
+<li>图床平台 <a target="_blank" rel="noopener" href="http://SM.MS">SM.MS</a>, Imgur, 其他图床无法设置api自动上传, 需要手动拖拽图片上传</li>
+<li>对象存储平台(阿里云, 腾讯云, 七牛云, 又拍云)</li>
+</ol>
+<p>各有优缺点</p>
+<ol>
+<li>代码托管平台GitHub国内用户没有翻墙的话, 加载图片将会很慢, Gitee之前可以作为图床, 现在已经不行了, 阿里不想让人白嫖</li>
+<li>图床平台服务器在国外, 没有图像的过多审核(恐怖主义和儿童色情不行), 十分安全, 免费额度也大, 但缺点同样是国内用户访问慢(SM.MS访问速度还差不多)</li>
+<li>对象存储平台中七牛云免费额度挺大, 但是七牛云的对象存储不提供域名, 必须自己买, 七牛云提供的测试域名只提供一个月; 其他对象存储平台没有域名问题, 价格倒也不贵, 但是会被人攻击, 如果有人使用工具恶意访问, 造成对象存储大量访问流量, 将会造成巨额费用💰💰💰</li>
+</ol>
+<hr />
+<h3 id="picgo"><a class="markdownIt-Anchor" href="#picgo"></a> PicGo</h3>
+<p>这个软件可以拖动文件上传图片到各种图床，并返回markdown格式链接到剪切板，也可以快捷键ctrl+shift+P上传剪切板图片到图床并返回markdown格式链接到剪切板</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231127193532.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">下载软件</a></p>
+<hr />
+<h3 id="下面展示使用阿里云对象存储创建图床"><a class="markdownIt-Anchor" href="#下面展示使用阿里云对象存储创建图床"></a> 下面展示使用阿里云对象存储创建图床</h3>
+<h4 id="开通"><a class="markdownIt-Anchor" href="#开通"></a> 开通</h4>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223018.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>阿里云对象存储有两种计费方式</p>
+<ol>
+<li>购买资源包</li>
+<li>后付费模式</li>
+</ol>
+<blockquote>
+<p>如果是购买资源包, 可以选择提前购买存储空间和流量, 如果是后付费模式, 则根据使用空间和流量计费, 扣除余额</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/oss/product-overview/billing-examples?spm=a2c4g.11186623.0.0.578e44939T8guP">具体可见官方文档的案例讲解</a></p>
+<p>(另:新用户有<a target="_blank" rel="noopener" href="https://free.aliyun.com/?product=1358&amp;crowd=personal&amp;spm=a2c4g.11186623.0.0.578e44939T8guP">免费额度</a>, 不同时间段免费套餐可能不一样)<br />
+<img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223456.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+在对象存储页面点击开通服务</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126223921.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>新建bucket</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224001.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-26%20215351.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<h4 id="accesskey"><a class="markdownIt-Anchor" href="#accesskey"></a> AccessKey</h4>
+<p>建议不要使用主账户的AccessToken操作，可以新建子账户进行访问</p>
+<p>右上角个人中心<br />
+<img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224353.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+新建用户</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224409.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224449.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>创建用户之后，我们需要给创建的子用户授权，在管理页面选择新建子商户之后选择给商户添加权限。</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224525.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>回到刚刚创建的bucket，在文件管理内给新建的用户授权</p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224553.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126224640.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<ul>
+<li>keyId：这里用之前新建的子用户的 AccessKey。</li>
+<li>KeySecret：这里使用新建子用户的 AcessSecret。</li>
+<li>存储空间名称：这里按照下图填写Bucket域名。</li>
+<li>存储区域：地域节点的二级域名位置部分(oss-cn-shenzhen)</li>
+</ul>
+<p><img src="https://img4blog1.oss-cn-zhangjiakou.aliyuncs.com/myImg/20231126225030.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<hr />
+<h3 id="下面展示用smms作为图床"><a class="markdownIt-Anchor" href="#下面展示用smms作为图床"></a> 下面展示用SM.MS作为图床</h3>
+<blockquote>
+<p>不同于上面用阿里云对象存储作为图床, 这个是专业图床平台, 不用搭建, 注册即用</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://sm.ms/">官网地址</a><br />
+<a target="_blank" rel="noopener" href="https://smms.app/">备用域名</a></p>
+<blockquote>
+<p>这个平台免费, 单个图片最大5M, 一次性最多可以上传10张照片, 如果有20张照片可以分开存储, 下面展示详细的限制<br />
+(有趣的一点是, 下面这张图片本身使用SM.MS图床展示, 如果你看不到, 那么说明正处于所谓&quot;政治敏感&quot;时期, 可以先考虑其他图床方案)<br />
+什么叫&quot;政治敏感&quot;时期? 例如国内开XX大会时期, 就是那些对无产阶级没有什么实际帮助但又大肆宣传的XX大会, 又或者发生了敏感政治事件, 又或者6月4日等等诸如此类掩耳盗铃时期, 都会&quot;增高&quot;防火长城(GFW), 也就是对于外网访问的黑名单增加</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2023/11/27/itSz64RHfAgxNGD.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>免费用户拥有5G空间, 基本用不完, 如果真的用完了, 可以再申请一个账号</p>
+<p>这个图床配置PicGo只需要一个apitoken</p>
+<p><a target="_blank" rel="noopener" href="https://sm.ms/home/apitoken">获取apitoken🔗</a><br />
+<a target="_blank" rel="noopener" href="https://smms.app/home/apitoken">备用地址</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" class="category-chain-item">技术笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>图床选择</div>
+      <div>http://example.com/2023/11/26/图床选择/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李小基</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年11月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/18/%E5%8A%9B%E6%89%A3%E7%AC%AC380%E5%9C%BA%E5%91%A8%E8%B5%9B/" title="力扣第380场周赛(使用C++实现)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">力扣第380场周赛(使用C++实现)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/13/%E4%BA%8C%E5%8F%89%E6%A0%91/" title="二叉树(使用C++实现)">
+                        <span class="hidden-mobile">二叉树(使用C++实现)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":-10,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

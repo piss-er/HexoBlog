@@ -16,16 +16,16 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="😲示例  栈  1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;stack&gt;int main() &amp;#123;    std::stack&lt;int&gt; myStack;    &#x2F;&#x2F; 入栈    myStack.push(1);    myStack.push(2);">
+    <meta name="description" content="😲示例  栈是一种先进后出(后进先出)的结构, 与之对应, 队列是一种先进先出(后进后出)的结构   STL中的栈的底层实现可以是vector，deque，list   可以使用下面语句指定栈的底层实现  1std::stack&lt;int, std::vector&lt;int&gt; &gt; third;  &#x2F;&#x2F; 使用vector为底层容器的栈  缺省状态下将会使用deque为栈的底层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="栈和队列(使用C++实现)">
 <meta property="og:url" content="http://example.com/2023/08/31/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="😲示例  栈  1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;stack&gt;int main() &amp;#123;    std::stack&lt;int&gt; myStack;    &#x2F;&#x2F; 入栈    myStack.push(1);    myStack.push(2);">
+<meta property="og:description" content="😲示例  栈是一种先进后出(后进先出)的结构, 与之对应, 队列是一种先进先出(后进后出)的结构   STL中的栈的底层实现可以是vector，deque，list   可以使用下面语句指定栈的底层实现  1std::stack&lt;int, std::vector&lt;int&gt; &gt; third;  &#x2F;&#x2F; 使用vector为底层容器的栈  缺省状态下将会使用deque为栈的底层">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://code-thinking.cdn.bcebos.com/gifs/232.%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E7%89%88%E6%9C%AC2.gif">
 <meta property="article:published_time" content="2023-08-31T02:53:12.975Z">
-<meta property="article:modified_time" content="2023-08-31T02:53:55.031Z">
+<meta property="article:modified_time" content="2023-10-07T05:45:43.779Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -101,7 +101,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>李小基的个人站</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k 字
+          4.4k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          35 分钟
+          37 分钟
         
       </span>
     
@@ -282,11 +282,25 @@
                 
                 <h3 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 😲示例</h3>
 <blockquote>
-<p>栈</p>
+<p>栈是一种先进后出(后进先出)的结构, 与之对应, 队列是一种先进先出(后进后出)的结构</p>
+</blockquote>
+<blockquote>
+<p>STL中的栈的底层实现可以是vector，deque，list</p>
+</blockquote>
+<blockquote>
+<p>可以使用下面语句指定栈的底层实现</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">std::stack&lt;<span class="hljs-type">int</span>, std::vector&lt;<span class="hljs-type">int</span>&gt; &gt; third;  <span class="hljs-comment">// 使用vector为底层容器的栈</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>缺省状态下将会使用deque为栈的底层实现<br />
+deque是一个双向队列，只要封住一段，只开通另一端就可以实现栈的逻辑了</p>
+</blockquote>
+<blockquote>
+<p>栈的常用方法示例</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    std::stack&lt;<span class="hljs-type">int</span>&gt; myStack;<br><br>    <span class="hljs-comment">// 入栈</span><br>    myStack.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);<br>    myStack.<span class="hljs-built_in">push</span>(<span class="hljs-number">2</span>);<br>    myStack.<span class="hljs-built_in">push</span>(<span class="hljs-number">3</span>);<br><br>    <span class="hljs-comment">// 访问栈顶元素</span><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Top element: &quot;</span> &lt;&lt; myStack.<span class="hljs-built_in">top</span>() &lt;&lt; std::endl;<br><br>    <span class="hljs-comment">// 出栈</span><br>    myStack.<span class="hljs-built_in">pop</span>();<br><br>    <span class="hljs-comment">// 检查栈是否为空</span><br>    <span class="hljs-keyword">if</span> (myStack.<span class="hljs-built_in">empty</span>()) &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Stack is empty&quot;</span> &lt;&lt; std::endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Stack is not empty&quot;</span> &lt;&lt; std::endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>队列</p>
+<p>队列的常用方法示例</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    std::queue&lt;<span class="hljs-type">int</span>&gt; myQueue;<br><br>    <span class="hljs-comment">// 入队</span><br>    myQueue.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);<br>    myQueue.<span class="hljs-built_in">push</span>(<span class="hljs-number">2</span>);<br>    myQueue.<span class="hljs-built_in">push</span>(<span class="hljs-number">3</span>);<br><br>    <span class="hljs-comment">// 访问队首元素</span><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Front element: &quot;</span> &lt;&lt; myQueue.<span class="hljs-built_in">front</span>() &lt;&lt; std::endl;<br><br>    <span class="hljs-comment">// 出队</span><br>    myQueue.<span class="hljs-built_in">pop</span>();<br><br>    <span class="hljs-comment">// 检查队列是否为空</span><br>    <span class="hljs-keyword">if</span> (myQueue.<span class="hljs-built_in">empty</span>()) &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Queue is empty&quot;</span> &lt;&lt; std::endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Queue is not empty&quot;</span> &lt;&lt; std::endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="一些疑问解答"><a class="markdownIt-Anchor" href="#一些疑问解答"></a> 🤔一些疑问解答</h3>
@@ -410,6 +424,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/09/13/%E5%9B%9E%E6%BA%AF%E6%B3%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2)/" title="回溯法-深度优先搜索(使用C++实现)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">回溯法-深度优先搜索(使用C++实现)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
