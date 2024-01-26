@@ -4,41 +4,6 @@
   
   
   <entry>
-    <title>力扣第380场周赛(使用C++实现)</title>
-    <link href="/2024/01/18/%E5%8A%9B%E6%89%A3%E7%AC%AC380%E5%9C%BA%E5%91%A8%E8%B5%9B/"/>
-    <url>/2024/01/18/%E5%8A%9B%E6%89%A3%E7%AC%AC380%E5%9C%BA%E5%91%A8%E8%B5%9B/</url>
-    
-    <content type="html"><![CDATA[<h4 id="题目1"><a class="markdownIt-Anchor" href="#题目1"></a> 题目1</h4><p><a href="https://leetcode.cn/problems/count-elements-with-maximum-frequency/description/">力扣链接</a></p><pre><code class="hljs">给你一个由 正整数 组成的数组 nums 。返回数组 nums 中所有具有 最大 频率的元素的 总频率 。元素的 频率 是指该元素在数组中出现的次数。示例 1：输入：nums = [1,2,2,3,1,4]输出：4解释：元素 1 和 2 的频率为 2 ，是数组中的最大频率。因此具有最大频率的元素在数组中的数量是 4 。示例 2：输入：nums = [1,2,3,4,5]输出：5解释：数组中的所有元素的频率都为 1 ，是最大频率。因此具有最大频率的元素在数组中的数量是 5 。</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxFrequencyElements</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> map[<span class="hljs-number">101</span>];<br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> max_value = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> len = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;len; i++)&#123;<br>            <span class="hljs-type">int</span> value = nums[i];<br>            map[value]++;<br>            <span class="hljs-keyword">if</span>(map[value]&gt;max_value)&#123;<br>                max_value = map[value];<br>                ans = max_value;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(map[value]==max_value)&#123;<br>                ans+=max_value;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>算法</tag>
-      
-      <tag>数据结构</tag>
-      
-      <tag>C++</tag>
-      
-      <tag>力扣刷题</tag>
-      
-      <tag>Java转C++</tag>
-      
-      <tag>力扣周赛</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>图床选择</title>
     <link href="/2023/11/26/%E5%9B%BE%E5%BA%8A%E9%80%89%E6%8B%A9/"/>
     <url>/2023/11/26/%E5%9B%BE%E5%BA%8A%E9%80%89%E6%8B%A9/</url>
