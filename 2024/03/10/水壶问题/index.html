@@ -16,15 +16,15 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹 为了方便以下探讨问题使用单位“升” 那么如何使用这两个水桶盛水呢?  以下是一个参考方案(用一个数对表示两个水桶的水量)假设最开始为(0,0)  大桶装满5升水 (0,5) 把5升水倒进3升水桶里, 留下2升 (3,2) 倒空小桶的水(不">
+    <meta name="description" content="问题背景 这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹 为了方便以下探讨问题使用单位“升”  那么如何使用这两个水桶盛水呢?  以下是一个参考方案(用一个数对表示两个水桶的水量)假设最开始为(0,0)  大桶装满5升水 (0,5) 把5升水倒进3升水桶里, 留下2升 (3,2) 倒">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有一个3升水壶和一个5升水壶, 如何精确取出4升水?">
 <meta property="og:url" content="http://example.com/2024/03/10/%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹 为了方便以下探讨问题使用单位“升” 那么如何使用这两个水桶盛水呢?  以下是一个参考方案(用一个数对表示两个水桶的水量)假设最开始为(0,0)  大桶装满5升水 (0,5) 把5升水倒进3升水桶里, 留下2升 (3,2) 倒空小桶的水(不">
+<meta property="og:description" content="问题背景 这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹 为了方便以下探讨问题使用单位“升”  那么如何使用这两个水桶盛水呢?  以下是一个参考方案(用一个数对表示两个水桶的水量)假设最开始为(0,0)  大桶装满5升水 (0,5) 把5升水倒进3升水桶里, 留下2升 (3,2) 倒">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-10T07:06:25.850Z">
-<meta property="article:modified_time" content="2024-03-10T07:39:10.510Z">
+<meta property="article:modified_time" content="2024-03-10T08:46:12.798Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数据结构">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.7k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          17 分钟
+          31 分钟
         
       </span>
     
@@ -278,9 +278,10 @@
             
               <div class="markdown-body">
                 
-                <p>这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹</p>
+                <h3 id="问题背景"><a class="markdownIt-Anchor" href="#问题背景"></a> 问题背景</h3>
+<p>这个问题来自于电影Die Hard Ⅲ(虎胆龙威3) 片段, 剧中, 主人公必须在规定时间内使用3加仑水桶和5加仑水桶盛出4加仑水, 否则, 恐怖分子将引爆炸弹</p>
 <p>为了方便以下探讨问题使用单位“升”</p>
-<p>那么如何使用这两个水桶盛水呢?</p>
+<h3 id="那么如何使用这两个水桶盛水呢"><a class="markdownIt-Anchor" href="#那么如何使用这两个水桶盛水呢"></a> 那么如何使用这两个水桶盛水呢?</h3>
 <blockquote>
 <p>以下是一个参考方案(用一个数对表示两个水桶的水量)假设最开始为(0,0)</p>
 <ol>
@@ -292,7 +293,7 @@
 <li>从大桶往小桶加水直至小桶正好填满, 此时大桶剩余4升 <strong>(3,4)</strong></li>
 </ol>
 </blockquote>
-<p>将这个问题一般化</p>
+<h3 id="将这个问题一般化"><a class="markdownIt-Anchor" href="#将这个问题一般化"></a> 将这个问题一般化</h3>
 <p>假设有两个水桶容量为<code>x</code>和<code>y</code>升, 请问能否准确的到<code>target</code>升的水</p>
 <p>由于没有精确测量体积的工具, 所以我们只有如下操作</p>
 <ul>
@@ -301,6 +302,7 @@
 <li>将一个水壶倒入另一个水壶, 直至水壶已满, 或者水壶已空</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/water-and-jug-problem/description/">力扣传送门</a></p>
+<h3 id="解答思路"><a class="markdownIt-Anchor" href="#解答思路"></a> 解答思路</h3>
 <p>最开始的状态为(0,0)</p>
 <p>然后对于最开始的状态可以进行的所有操作全部模拟一遍, 并记录操作之后的所有状态</p>
 <p>对于产生的每一个状态, 都重复以上操作, 将所有可能的操作全部模拟一遍</p>
@@ -308,7 +310,58 @@
 <p>对于每一个状态, 操作是重复的, 那么应该使用递归还是栈呢?</p>
 <p>由于无法预估到底多少次能够找到答案, 所以使用递归方式比较危险, 容易导致栈溢出, 因此使用栈来模拟递归, 使用栈保存水桶状态, 同时, 在增减水的过程中, 会出现重复的状态, 用集合保存所有模拟过的状态, 遇到集合中存在的状态就直接跳过</p>
 <p>返回值为布尔值, 表示是否可以达成目标</p>
+<h3 id="具体代码实现"><a class="markdownIt-Anchor" href="#具体代码实现"></a> 具体代码实现</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canMeasureWater</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        stack&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; state;       <span class="hljs-comment">// 存储状态的栈</span><br>        vector&lt;<span class="hljs-type">int</span>&gt; water = &#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;;      <span class="hljs-comment">// 存储两个水桶的数组</span><br>        set&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; my_set;        <span class="hljs-comment">// 保存所有已经试验过的状态的集合</span><br>        state.<span class="hljs-built_in">push</span>(water);              <span class="hljs-comment">// 将初始状态压入栈</span><br>        <span class="hljs-keyword">while</span>(!state.<span class="hljs-built_in">empty</span>())&#123;          <span class="hljs-comment">// 只要栈不空, 就可以继续模拟, 栈空了, 说明无法达成目标</span><br>            water = state.<span class="hljs-built_in">top</span>();        <span class="hljs-comment">// 获取当前准备模拟的一个状态</span><br>            state.<span class="hljs-built_in">pop</span>();                <span class="hljs-comment">// 获取完了弹出</span><br>            <span class="hljs-keyword">if</span>(my_set.<span class="hljs-built_in">contains</span>(water))&#123; <span class="hljs-comment">// 如果之前已经模拟过了</span><br>                <span class="hljs-keyword">continue</span>;               <span class="hljs-comment">// 跳过本次循环</span><br>            &#125;<br>            my_set.<span class="hljs-built_in">insert</span>(water);       <span class="hljs-comment">// 将本次状态加入集合</span><br>            <span class="hljs-keyword">if</span>(water[<span class="hljs-number">0</span>]==target || water[<span class="hljs-number">1</span>]==target || water[<span class="hljs-number">0</span>]+water[<span class="hljs-number">1</span>]==target)&#123;          <span class="hljs-comment">// 如果某一个水桶或者两个桶之和符合目标</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;            <span class="hljs-comment">// 返回true</span><br>            &#125;<br>            <span class="hljs-comment">// 装满第一个桶</span><br>            vector&lt;<span class="hljs-type">int</span>&gt; old = water;    <span class="hljs-comment">// 保留没操作之前的状态</span><br>            water[<span class="hljs-number">0</span>] = x;<br>            state.<span class="hljs-built_in">push</span>(water);<br>            <span class="hljs-comment">// 装满第二个桶</span><br>            water = old;                <span class="hljs-comment">// 恢复没操作之前的状态</span><br>            water[<span class="hljs-number">1</span>] = y;<br>            state.<span class="hljs-built_in">push</span>(water);<br>            <span class="hljs-comment">// 清空第一个桶</span><br>            water = old;<br>            water[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>            state.<span class="hljs-built_in">push</span>(water);<br>            <span class="hljs-comment">// 清空第二个桶</span><br>            water = old;<br>            water[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>            state.<span class="hljs-built_in">push</span>(water);<br>            <span class="hljs-comment">// 第一个桶倒入第二个桶</span><br>            water = old;<br>            <span class="hljs-keyword">if</span>(water[<span class="hljs-number">0</span>]+water[<span class="hljs-number">1</span>]&lt;=y)&#123;   <span class="hljs-comment">// 如果加不满第二个桶</span><br>                water[<span class="hljs-number">1</span>] += water[<span class="hljs-number">0</span>];<br>                water[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>                state.<span class="hljs-built_in">push</span>(water);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;                       <span class="hljs-comment">// 如果加满了第二个桶, 第一个桶还有剩余</span><br>                <span class="hljs-type">int</span> t = y - water[<span class="hljs-number">1</span>];<br>                water[<span class="hljs-number">1</span>] = y;<br>                water[<span class="hljs-number">0</span>] -= t;<br>                state.<span class="hljs-built_in">push</span>(water);<br>            &#125;<br>            <span class="hljs-comment">// 第二个桶倒入第一个桶</span><br>            water = old;<br>            <span class="hljs-keyword">if</span>(water[<span class="hljs-number">0</span>]+water[<span class="hljs-number">1</span>]&lt;=x)&#123;   <span class="hljs-comment">// 如果加不满第一个桶</span><br>                water[<span class="hljs-number">0</span>] += water[<span class="hljs-number">1</span>];<br>                water[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>                state.<span class="hljs-built_in">push</span>(water);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;                       <span class="hljs-comment">// 如果加满了第一个桶, 第二个桶还有剩余</span><br>                <span class="hljs-type">int</span> t = x - water[<span class="hljs-number">0</span>];<br>                water[<span class="hljs-number">0</span>] = x;<br>                water[<span class="hljs-number">1</span>] -= t;<br>                state.<span class="hljs-built_in">push</span>(water);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;                   <span class="hljs-comment">// 栈空了也没找到符合要求的操作, 就返回false;</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="几个小问题"><a class="markdownIt-Anchor" href="#几个小问题"></a> 几个小问题</h3>
+<h4 id="1-set判断的是vectorint-对象的地址还是值"><a class="markdownIt-Anchor" href="#1-set判断的是vectorint-对象的地址还是值"></a> 1. set判断的是vector<int> 对象的地址还是值</h4>
+<blockquote>
+<p>C++中, set会判断vector<int> 的值, 自动比对是否一致, 但是在Java中会比较对象的地址, 此时想使用的set中的contains()方法的话, 可以使用如下方法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs Java">calss Water&#123;<br>    <span class="hljs-type">int</span> a;<br>    <span class="hljs-type">int</span> b;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Water</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>&#123;<br>        <span class="hljs-built_in">this</span>.a = a;<br>        <span class="hljs-built_in">this</span>.b = b;<br>    &#125; <br>    <span class="hljs-comment">// 重写eauals()</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object o)</span>&#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">this</span>==o)         <span class="hljs-comment">// 本来就是这个对象, 直接返回</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span>(!(o.<span class="hljs-keyword">instanceof</span>(Water)))  <span class="hljs-comment">// 不是这个类的对象</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">Water</span> <span class="hljs-variable">w</span> <span class="hljs-operator">=</span> (Water)o;<br>        retuan w.a==<span class="hljs-built_in">this</span>.a &amp;&amp; w.b==<span class="hljs-built_in">this</span>.b;<br>    &#125;<br>    <span class="hljs-comment">// 重写hashCode(), 原因见下文</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">return</span> Objects.hash(<span class="hljs-built_in">this</span>.a,<span class="hljs-built_in">this</span>.b);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="2-为什么重写equals方法时一定要重写hashcode方法呢"><a class="markdownIt-Anchor" href="#2-为什么重写equals方法时一定要重写hashcode方法呢"></a> 2. 为什么重写<code>equals()</code>方法时一定要重写<code>hashCode()</code>方法呢?</h4>
+<blockquote>
+<p>在Java中, <code>HashMap</code>和<code>HashSet</code>类需要使用<code>hashCode</code>值确定对象在内存中的位置, 如果要在<code>HashMap</code>和<code>HashSet</code>对象中寻找是否存在一个对象, 那么首先会检查对象的<code>hashCode</code>值存不存在, 然后再调用<code>equals()</code>方法来比较和已经存在的对象是否相等</p>
+<p>如果重写了<code>equals()</code>方法时没有重写<code>hashCode()</code>方法, 那么在比较时压根找不到集合中已经存在的相同的对象, 导致程序认为集合中不存在要找的对象</p>
+<p><code>Objects.hash()</code>方法的参数是若干个Object对象<br />
+它的定于是<code>public static int hash(Object... values)</code><br />
+<a target="_blank" rel="noopener" href="https://21yi.com/java/java.util.Objects.hash_10681.html">参考链接</a></p>
+</blockquote>
+<h4 id="3-递归多少层会栈溢出呢"><a class="markdownIt-Anchor" href="#3-递归多少层会栈溢出呢"></a> 3. 递归多少层会栈溢出呢?</h4>
+<blockquote>
+<p>递归的层数导致栈溢出的具体限制因系统而异, 但通常在几千到几百万层之间这取决于计算机的内存大小、操作系统和编程语言的实现方式</p>
+</blockquote>
+<blockquote>
+<p>为了避免栈溢出, 可以考虑以下方法</p>
+<ol>
+<li>优化递归算法：使用<strong>尾递归</strong>, 以减少栈帧的累积</li>
+<li>增加栈大小：某些编程语言和环境允许你手动设置栈的大小如果递归算法需要更深的栈, 可以尝试增加栈的大小</li>
+<li>使用循环：修改算法的具体实现方法, 改成使用循环迭代思考具体的循环条件, 或者使用直接用栈模拟递归过程</li>
+</ol>
+</blockquote>
+<h4 id="4-什么是尾递归"><a class="markdownIt-Anchor" href="#4-什么是尾递归"></a> 4. 什么是尾递归</h4>
+<blockquote>
+<p>在递归时, 通常会发生, a函数在自己内部调用了2次或者多次a函数本身, 此时递归使用的系统栈空间称指数增加, 容易发生栈溢出, 所以如果只调用一次的话, 可以减少一定的系统栈的占用, 此时如果调用语句时<code>return</code>语句, 那么a函数调用自己之后就无需保留自己的状态, 系统也不需要为程序保留旧的a函数, 只需要管理新的a函数即可, 大大减少了系统栈的开销</p>
+<p>给尾递归下一个定义, <em>指一个函数在调用自身之后不再执行任何其他操作，而是将返回值直接传递给函数调用的上级</em></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/611472573">参考链接</a></p>
+</blockquote>
+<blockquote>
+<p>下面演示一下如何将一个不是尾递归的函数改造成尾递归</p>
+</blockquote>
+<p><strong>改造前</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 求斐波那契数列 0,1,1,2....</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(n)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span> || n==<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> n;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">fibonacci</span>(n<span class="hljs-number">-1</span>) + <span class="hljs-built_in">fibonacci</span>(n<span class="hljs-number">-2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>改造后</strong></p>
+<pre class="highlight"><code class="cpp"><span class="hljs-comment">// 求斐波那契数列 0,1,1,2....</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(n, k=<span class="hljs-number">2</span>, prev=<span class="hljs-number">0</span>, next=<span class="hljs-number">1</span>)</span></span>&#123;
+    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span> || n==<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> n;
+    <span class="hljs-keyword">if</span>(n==k)&#123;   <span class="hljs-comment">// k表示目前累积到了第几项</span>
+        <span class="hljs-keyword">return</span> prev+next;
+    &#125;
+    <span class="hljs-keyword">return</span> fibonacci(n, k+<span class="hljs-number">1</span>, next, prev+next);
+    <span class="hljs-comment">// 到n==k的时候, 就无需向下递归, 直接返回前两项之和</span>
+    <span class="hljs-comment">// 如果没到n==k, 那么继续向下累计</span>
+&#125;</code></pre>
+
                 
               </div>
             
