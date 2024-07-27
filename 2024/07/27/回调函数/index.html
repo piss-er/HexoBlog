@@ -24,7 +24,7 @@
 <meta property="og:description" content="1. 什么是回调函数 回调函数是一种将函数作为参数传递给另一个函数的技术，在计算机编程中非常常见。当外部函数完成某些操作后，它会“回调”到提供的函数，并执行该函数。这种机制允许程序在某个事件或条件发生时执行特定的代码块。  示例： 假设有一个函数 doSomething，它接受一个参数 callback。当 doSomething 完成其内部处理后，它会调用 callback 函数。 12345">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-27T10:26:57.769Z">
-<meta property="article:modified_time" content="2024-07-27T10:27:44.929Z">
+<meta property="article:modified_time" content="2024-07-27T10:29:47.083Z">
 <meta property="article:author" content="李小基">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -230,7 +230,7 @@
         
         
         
-          30 分钟
+          31 分钟
         
       </span>
     
@@ -308,7 +308,7 @@
 <h4 id="c"><a class="markdownIt-Anchor" href="#c"></a> C++:</h4>
 <p>C++ 可以使用函数指针或 std::function 类型来实现回调。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;functional&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">processData</span><span class="hljs-params">(<span class="hljs-type">int</span> data, std::function&lt;<span class="hljs-type">void</span>(<span class="hljs-type">int</span>)&gt; callback)</span> </span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Processing data: &quot;</span> + std::<span class="hljs-built_in">to_string</span>(data) &lt;&lt; std::endl;<br>    <span class="hljs-built_in">callback</span>(data * <span class="hljs-number">2</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">processData</span>(<span class="hljs-number">5</span>, [](<span class="hljs-type">int</span> result) &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Result processed: &quot;</span> + std::<span class="hljs-built_in">to_string</span>(result) &lt;&lt; std::endl;<br>    &#125;);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="4-什么是回调地狱"><a class="markdownIt-Anchor" href="#4-什么是回调地狱"></a> 4. 什么是回调地狱</h3>
+<h3 id="4-什么是回调地狱callback-hell"><a class="markdownIt-Anchor" href="#4-什么是回调地狱callback-hell"></a> 4. 什么是回调地狱(Callback Hell)</h3>
 <p>回调地狱指的是在使用回调函数进行异步编程时出现的一种复杂和难以维护的代码结构。当多个异步操作嵌套在一起时，代码往往会变得难以阅读和管理，形成了所谓的“金字塔”或“意大利面条”式的代码结构。这种现象在 JavaScript 和其他支持回调函数的语言中尤为常见。</p>
 <h4 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点:</h4>
 <ul>
@@ -398,6 +398,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/07/27/%E5%8D%8F%E7%A8%8B%E5%92%8C%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB/" title="协程和异步的区别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">协程和异步的区别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
