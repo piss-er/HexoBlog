@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>策略模式</title>
+    <link href="/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <url>/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一个开发小例子"><a class="markdownIt-Anchor" href="#一个开发小例子"></a> 一个开发小例子</h3><p>假如有一天, 你在开发游戏, 需要设计敌人类<code>Enemy</code>作为父类, 同时下面有子类野猪<code>Boar</code>和鸟<code>Bird</code>, 每个敌人都有私有变量<code>attackDamage</code>用于记录造成的伤害值, 有一个公开方法<code>Attack()</code>用于造成伤害</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs classDiagram">class Enemy&#123;<br>    - attackDamage: float<br>    + Attack() void<br>&#125;<br>Enemy &lt;|-- Boar<br>class Boar&#123;<br>    - attackDamage: float<br>    + Attack() void<br>&#125;<br>Enemy &lt;|-- Bird<br>class Bird&#123;<br>    - attackDamage: float<br>    + Attack() void<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="总结-什么是策略模式"><a class="markdownIt-Anchor" href="#总结-什么是策略模式"></a> 总结: 什么是策略模式</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C#</tag>
+      
+      <tag>游戏开发</tag>
+      
+      <tag>Unity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>预编译指令是什么, 游戏开发中有哪些常见预编译指令</title>
     <link href="/%E9%A2%84%E7%BC%96%E8%AF%91%E6%8C%87%E4%BB%A4/"/>
     <url>/%E9%A2%84%E7%BC%96%E8%AF%91%E6%8C%87%E4%BB%A4/</url>
