@@ -24,7 +24,7 @@
 <meta property="og:description" content="状态同步和帧同步  状态同步和帧同步是两种不同的网络同步策略，它们的应用场景和目的各不相同，区分这两者是为了满足不同类型的游戏对网络同步的需求。   假设在一个联机游戏中，玩家可以在地图上移动，有血量和transform（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。   状态同步">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-20T10:38:05.731Z">
-<meta property="article:modified_time" content="2024-08-20T11:15:08.056Z">
+<meta property="article:modified_time" content="2024-08-20T11:18:04.446Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="C#">
 <meta property="article:tag" content="游戏开发">
@@ -216,7 +216,7 @@
         
         
         
-          40 分钟
+          39 分钟
         
       </span>
     
@@ -389,7 +389,7 @@
 <p>因此，区分状态同步和帧同步是为了根据不同的游戏需求选择最合适的同步策略，确保游戏体验的流畅性和一致性。不同类型的游戏对同步的要求不同，因此需要根据具体情况来选择或结合这两种策略。</p>
 <p>在实际应用中，会结合两者的优点，针对不同的游戏机制选择合适的同步策略。例如，可以使用状态同步来同步玩家位置和血量，而使用帧同步来处理关键的输入事件（如攻击）以确保所有客户端在相同的帧执行相同的攻击动作。</p>
 <h2 id="mirror插件的两种同步方式"><a class="markdownIt-Anchor" href="#mirror插件的两种同步方式"></a> Mirror插件的两种同步方式</h2>
-<p>Mirror使用的策略主要是<strong>状态同步</strong>（State Synchronization），但它也可以灵活地结合<strong>帧同步</strong>（Frame Synchronization）来实现复杂的网络功能。</p>
+<p>Mirror使用的策略主要是<strong>状态同步</strong>，但它也可以灵活地结合<strong>帧同步</strong>来实现复杂的网络功能。</p>
 <h3 id="1-状态同步为主"><a class="markdownIt-Anchor" href="#1-状态同步为主"></a> 1. <strong>状态同步为主</strong>：</h3>
 <ul>
 <li><strong>Mirror</strong>依赖于服务器来管理和同步游戏状态，服务器负责计算和更新游戏中的关键状态（如玩家位置、血量、武器状态等），并将这些状态同步给所有客户端。这是状态同步的典型应用。</li>
