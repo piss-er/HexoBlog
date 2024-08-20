@@ -16,15 +16,15 @@
   <meta name="author" content="李小基">
   <meta name="keywords" content="">
   
-    <meta name="description" content="状态同步和帧同步  假设在一个联机游戏中，玩家可以在地图上移动，有血量和transform（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。   状态同步 (State Synchronization) 状态同步的核心思想是由服务器主导游戏状态的管理，并定期将玩家的状态（如位置、血量、">
+    <meta name="description" content="状态同步和帧同步  状态同步和帧同步是两种不同的网络同步策略，它们的应用场景和目的各不相同，区分这两者是为了满足不同类型的游戏对网络同步的需求。   假设在一个联机游戏中，玩家可以在地图上移动，有血量和transform（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。   状态同步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="状态同步和帧同步">
 <meta property="og:url" content="http://example.com/%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5%E5%92%8C%E5%B8%A7%E5%90%8C%E6%AD%A5/index.html">
 <meta property="og:site_name" content="李小基的个人站">
-<meta property="og:description" content="状态同步和帧同步  假设在一个联机游戏中，玩家可以在地图上移动，有血量和transform（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。   状态同步 (State Synchronization) 状态同步的核心思想是由服务器主导游戏状态的管理，并定期将玩家的状态（如位置、血量、">
+<meta property="og:description" content="状态同步和帧同步  状态同步和帧同步是两种不同的网络同步策略，它们的应用场景和目的各不相同，区分这两者是为了满足不同类型的游戏对网络同步的需求。   假设在一个联机游戏中，玩家可以在地图上移动，有血量和transform（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。   状态同步">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-20T10:38:05.731Z">
-<meta property="article:modified_time" content="2024-08-20T11:00:07.570Z">
+<meta property="article:modified_time" content="2024-08-20T11:15:08.056Z">
 <meta property="article:author" content="李小基">
 <meta property="article:tag" content="C#">
 <meta property="article:tag" content="游戏开发">
@@ -205,7 +205,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          4.7k 字
         
       </span>
     
@@ -216,7 +216,7 @@
         
         
         
-          34 分钟
+          40 分钟
         
       </span>
     
@@ -261,9 +261,13 @@
                 
                 <h2 id="状态同步和帧同步"><a class="markdownIt-Anchor" href="#状态同步和帧同步"></a> 状态同步和帧同步</h2>
 <blockquote>
+<p><strong>状态同步</strong>和<strong>帧同步</strong>是两种不同的网络同步策略，它们的应用场景和目的各不相同，区分这两者是为了满足不同类型的游戏对网络同步的需求。</p>
+</blockquote>
+<blockquote>
 <p>假设在一个联机游戏中，玩家可以在地图上移动，有血量和<code>transform</code>（位置、旋转、缩放），并可以通过键盘进行武器攻击。接下来，分别用状态同步和帧同步来讲解在这种情况下，谁会发送什么信息以及这些信息是如何在客户端和服务器之间传递的。</p>
 </blockquote>
 <h3 id="状态同步-state-synchronization"><a class="markdownIt-Anchor" href="#状态同步-state-synchronization"></a> 状态同步 (State Synchronization)</h3>
+<p>通常用于同步游戏中的静态或半动态的数据，这些数据可以直接通过定期更新或在状态变化时进行广播来同步。</p>
 <p><strong>状态同步</strong>的核心思想是由服务器主导游戏状态的管理，并定期将玩家的状态（如位置、血量、武器状态等）发送给所有客户端。具体来说：</p>
 <h4 id="1-服务器负责管理状态"><a class="markdownIt-Anchor" href="#1-服务器负责管理状态"></a> 1. <strong>服务器负责管理状态</strong></h4>
 <ul>
@@ -291,7 +295,32 @@
 <ul>
 <li>玩家A在地图上移动。服务器计算出玩家A的新位置，并将这个位置以及其他状态数据发送给所有客户端。客户端收到这些信息后，将玩家A在游戏中的显示位置更新到新位置。</li>
 </ul>
+<h4 id="简单总结"><a class="markdownIt-Anchor" href="#简单总结"></a> 简单总结</h4>
+<ul>
+<li>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>服务器是游戏状态的权威，所有的状态更新在服务器上发生，然后广播给所有客户端。</li>
+<li>状态同步具有较高的容错性，因为即使客户端的帧率不同，最终的游戏状态仍然可以通过服务器同步确保一致。</li>
+</ul>
+</li>
+<li>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>容易实现，适合网络延迟较大的环境。</li>
+<li>能够确保所有玩家看到的游戏状态一致，即使有网络延迟或丢包。</li>
+</ul>
+</li>
+<li>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>在某些场景下可能会导致较高的带宽消耗，特别是当状态更新频繁时。</li>
+<li>状态的更新频率决定了同步的平滑度，如果同步频率低，可能会导致玩家体验不流畅。</li>
+</ul>
+</li>
+</ul>
 <h3 id="帧同步-frame-synchronization"><a class="markdownIt-Anchor" href="#帧同步-frame-synchronization"></a> 帧同步 (Frame Synchronization)</h3>
+<p>这种方法通常用于需要高度精确和同步的场景，例如需要实时操作和快速反应的游戏。</p>
 <p><strong>帧同步</strong>的核心思想是所有客户端在相同的时间执行相同的指令，以保持游戏状态的一致性。在这种模式下，客户端主要同步玩家的输入信息，而不是整个游戏状态。具体来说：</p>
 <h4 id="1-客户端发送输入"><a class="markdownIt-Anchor" href="#1-客户端发送输入"></a> 1. <strong>客户端发送输入</strong></h4>
 <ul>
@@ -328,11 +357,36 @@
 <ul>
 <li>玩家A按下“攻击”键。客户端将这个输入发送给服务器，服务器将玩家A的“攻击”指令广播给所有客户端。在同一帧，所有客户端都执行这个“攻击”指令，更新玩家A的攻击动画和效果。</li>
 </ul>
+<h4 id="简单总结-2"><a class="markdownIt-Anchor" href="#简单总结-2"></a> 简单总结</h4>
+<ul>
+<li>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>客户端主要同步输入（如按键、移动指令等），而非完整的状态。</li>
+<li>服务器将收集到的输入信息广播给所有客户端，所有客户端在相同的帧上执行这些输入，从而确保所有客户端的游戏状态保持一致。</li>
+</ul>
+</li>
+<li>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>能够保证极高的精确性和一致性，特别适合需要精确控制的游戏。</li>
+<li>更加节省带宽，因为只需同步输入数据，而不是整个游戏状态。</li>
+</ul>
+</li>
+<li>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>对网络延迟非常敏感，任何网络延迟都会直接影响游戏体验，可能导致“卡顿”或“延迟”现象。</li>
+<li>对开发要求较高，需要保证所有客户端在完全相同的状态下执行相同的指令。</li>
+</ul>
+</li>
+</ul>
 <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
 <ul>
-<li><strong>状态同步</strong>：服务器发送玩家的状态（如位置、血量、武器状态）给所有客户端。服务器控制游戏状态的更新，客户端根据接收到的状态更新显示。适合需要较高容错性和简化客户端逻辑的游戏。</li>
-<li><strong>帧同步</strong>：客户端发送玩家的输入（如按键、鼠标操作）给服务器，服务器将这些输入广播给所有客户端。所有客户端在相同的帧执行相同的操作。适合需要精确同步和一致性的游戏。</li>
+<li><strong>状态同步</strong>：服务器发送玩家的状态（如位置、血量、武器状态）给所有客户端。服务器控制游戏状态的更新，客户端根据接收到的状态更新显示。适合需要<strong>较高容错性</strong>和<strong>简化客户端逻辑</strong>的游戏。</li>
+<li><strong>帧同步</strong>：客户端发送玩家的输入（如按键、鼠标操作）给服务器，服务器将这些输入广播给所有客户端。所有客户端在相同的帧执行相同的操作。适合需要<strong>精确同步</strong>和<strong>一致性</strong>的游戏。</li>
 </ul>
+<p>因此，区分状态同步和帧同步是为了根据不同的游戏需求选择最合适的同步策略，确保游戏体验的流畅性和一致性。不同类型的游戏对同步的要求不同，因此需要根据具体情况来选择或结合这两种策略。</p>
 <p>在实际应用中，会结合两者的优点，针对不同的游戏机制选择合适的同步策略。例如，可以使用状态同步来同步玩家位置和血量，而使用帧同步来处理关键的输入事件（如攻击）以确保所有客户端在相同的帧执行相同的攻击动作。</p>
 <h2 id="mirror插件的两种同步方式"><a class="markdownIt-Anchor" href="#mirror插件的两种同步方式"></a> Mirror插件的两种同步方式</h2>
 <p>Mirror使用的策略主要是<strong>状态同步</strong>（State Synchronization），但它也可以灵活地结合<strong>帧同步</strong>（Frame Synchronization）来实现复杂的网络功能。</p>
